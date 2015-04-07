@@ -16,14 +16,12 @@
     <!-- endbuild -->
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
   <body ng-app="srcApp">
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <!-- <div class="sticky"> -->
-    
-    <!-- </div>  -->
     <div class="off-canvas-wrap" data-offcanvas>
       <div class="inner-wrap">
         <nav id="top-bar" class="top-bar" data-topbar role="navigation">
@@ -51,106 +49,274 @@
         </nav>
         <aside class="left-off-canvas-menu">
           <ul class="off-canvas-list">
-            <li class="rx-logo-area"><img src="images/yeoman.png" alt="I'm Yeoman"><br>rexel ux logo here</li>
-            <li><a>Intro</a></li>
-            <li><a>colors</a></li>
-            <li><a>logos</a></li>
-            <li><a>navigation</a></li>
-            <li><a>breadcrumbs</a></li>
-            <li><a>pagination</a></li>
-            <li><a>input</a></li>
-            <li><a>textarea</a></li>
-            <li><a>images</a></li>
-            <li><a>product images</a></li>
-            <li><a>slideshows</a></li>
-            <li><a>videos</a></li>
-            <li><a>thumbnails</a></li>
-            <li><a>modals</a></li>
-            <li><a>lightboxes</a></li>
-            <li><a>forms</a></li>
-            <li><a>switches</a></li>
-            <li><a>range sliders</a></li>
-            <li><a>alerts & warnings</a></li>
-            <li><a>buttons</a></li>
-            <li><a>button groups</a></li>
-            <li><a>split buttons</a></li>
-            <li><a>dropdowns</a></li>
-            <li><a>typography</a></li>
-            <li><a>lists</a></li>
-            <li><a>labels</a></li>
-            <li><a>keystrokes</a></li>
-            <li><a>panels</a></li>
-            <li><a>tooltips</a></li>
-            <li><a>pricing tables</a></li>
-            <li><a>tables</a></li>
-            <li><a>progress bars</a></li>
-            <li><a>accordions</a></li>
-            <li><a>tabs</a></li>
-            <li><a>visibility</a></li>
-            <li><a>grids</a></li>
-            <li><a>links</a></li>
-            <li><a>containers</a></li>
-            <li><a>media queries</a></li>
-            <li><a>hover states</a></li>
-            <li><a>active states</a></li>
-            <li><a>disabled states</a></li>
-            <li><a>icons</a></li>
-            <li><a>pdfs</a></li>
-            <li><a>abbreviations</a></li>
-            <li><a>addresses</a></li>
-            <li><a>animations</a></li>
-            <li><a>tabbed pages</a></li>
-            <li><a>maps</a></li>
-            <li><a>banners</a></li>
-
-          </ul>
-        </aside>
-        <!-- Add your site or application content here -->
-        <div class="content-container container">
-          <div ng-view=""></div>
-          <div class="footer">
-            <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-          </div>
-        </div>
-        
-        <!-- <a class="exit-off-canvas"></a> -->
-      </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
-    !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-    (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-    r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-    }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
-    </script>
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/fastclick/lib/fastclick.js"></script>
-    <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
-    <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
-    <script src="bower_components/foundation/js/foundation.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/about.js"></script>
-    <!-- endbuild -->
-    <!-- custom -->
-    <script src="scripts/main.js"></script>
-  </body>
-</html>
+            <li class="rx-logo-area"><img src="images/hero-image.svg" width="150"><br>rexel ux title here</li>
+            <li><a class="top-level top-level-direct" href="">overview</a></li>
+            <li><a class="top-level top-level-direct" href="">colors</a></li>
+            <li><a class="top-level top-level-direct" href="">logos</a></li>
+            <li><a class="top-level top-level-direct" href="">maps</a></li>
+            <li><a class="top-level top-level-direct" href="">banners</a></li>
+            <li><a class="top-level top-level-dropdown" href="">responsive <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
+              <path
+                id="shape"
+                d="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                transform="translate(71) rotate(45)"
+                >
+                <animate
+                  id="shape-open"
+                  class="shape-open"
+                  attributeName="d"
+                  from="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                  to="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                  repeatount="indefinite"
+                  dur=".2s"
+                  begin="50000s;"
+                  fill="freeze"
+                  values="M 50,50 L 100,0 L 100,100 L 0,100 z;M 0,0 L 100,0 L 50,50 L 0,100 z;"
+                  />
+                  <animate
+                    id="shape-close"
+                    class="shape-close"
+                    attributeName="d"
+                    from="M 0,0 L 100,0 L 50,50 L 0,100 z"
+                    to="M 0,0 L 100,0 L 50,50 L 0,100 z"
+                    repeatount="indefinite"
+                    dur=".2s"
+                    begin="50000s;"
+                    fill="freeze"
+                    values="M 0,0 L 100,0 L 50,50 L 0,100 z;M 50,50 L 100,0 L 100,100 L 0,100 z;"
+                    />
+                  </path>
+                </svg></a></li>
+                <li class="sub-level-list">
+                  <ul>
+                    <li><a class="sub-level" href=""> containers</a></li>
+                    <li><a class="sub-level" href=""> media queries</a></li>
+                    <li><a class="sub-level" href=""> visibility</a></li>
+                  </ul>
+                </li>
+                <li><a class="top-level top-level-dropdown" href="">typography <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
+                  <path
+                    id="shape"
+                    d="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                    transform="translate(71) rotate(45)"
+                    >
+                    <animate
+                      id="shape-open"
+                      class="shape-open"
+                      attributeName="d"
+                      from="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                      to="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                      repeatount="indefinite"
+                      dur=".2s"
+                      begin="50000s;"
+                      fill="freeze"
+                      values="M 50,50 L 100,0 L 100,100 L 0,100 z;M 0,0 L 100,0 L 50,50 L 0,100 z;"
+                      />
+                      <animate
+                        id="shape-close"
+                        class="shape-close"
+                        attributeName="d"
+                        from="M 0,0 L 100,0 L 50,50 L 0,100 z"
+                        to="M 0,0 L 100,0 L 50,50 L 0,100 z"
+                        repeatount="indefinite"
+                        dur=".2s"
+                        begin="50000s;"
+                        fill="freeze"
+                        values="M 0,0 L 100,0 L 50,50 L 0,100 z;M 50,50 L 100,0 L 100,100 L 0,100 z;"
+                        />
+                      </path>
+                    </svg></a></li>
+                    <li class="sub-level-list">
+                      <ul>
+                        <li><a class="sub-level" href=""> fonts</a></li>
+                        <li><a class="sub-level" href=""> iconography</a></li>
+                        <li><a class="sub-level" href=""> formatting</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="top-level top-level-dropdown" href="">media <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
+                      <path
+                        id="shape"
+                        d="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                        transform="translate(71) rotate(45)"
+                        >
+                        <animate
+                          id="shape-open"
+                          class="shape-open"
+                          attributeName="d"
+                          from="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                          to="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                          repeatount="indefinite"
+                          dur=".2s"
+                          begin="50000s;"
+                          fill="freeze"
+                          values="M 50,50 L 100,0 L 100,100 L 0,100 z;M 0,0 L 100,0 L 50,50 L 0,100 z;"
+                          />
+                          <animate
+                            id="shape-close"
+                            class="shape-close"
+                            attributeName="d"
+                            from="M 0,0 L 100,0 L 50,50 L 0,100 z"
+                            to="M 0,0 L 100,0 L 50,50 L 0,100 z"
+                            repeatount="indefinite"
+                            dur=".2s"
+                            begin="50000s;"
+                            fill="freeze"
+                            values="M 0,0 L 100,0 L 50,50 L 0,100 z;M 50,50 L 100,0 L 100,100 L 0,100 z;"
+                            />
+                          </path>
+                        </svg></a></li>
+                        <li class="sub-level-list">
+                          <ul>
+                            <li><a class="sub-level" href=""> product images</a></li>
+                            <li><a class="sub-level" href=""> thumbnails</a></li>
+                            <li><a class="sub-level" href=""> videos</a></li>
+                            <li><a class="sub-level" href=""> 360 photos</a></li>
+                          </ul>
+                        </li>
+                        <li><a class="top-level top-level-dropdown" href="">html <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
+                          <path
+                            id="shape"
+                            d="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                            transform="translate(71) rotate(45)"
+                            >
+                            <animate
+                              id="shape-open"
+                              class="shape-open"
+                              attributeName="d"
+                              from="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                              to="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                              repeatount="indefinite"
+                              dur=".2s"
+                              begin="50000s;"
+                              fill="freeze"
+                              values="M 50,50 L 100,0 L 100,100 L 0,100 z;M 0,0 L 100,0 L 50,50 L 0,100 z;"
+                              />
+                              <animate
+                                id="shape-close"
+                                class="shape-close"
+                                attributeName="d"
+                                from="M 0,0 L 100,0 L 50,50 L 0,100 z"
+                                to="M 0,0 L 100,0 L 50,50 L 0,100 z"
+                                repeatount="indefinite"
+                                dur=".2s"
+                                begin="50000s;"
+                                fill="freeze"
+                                values="M 0,0 L 100,0 L 50,50 L 0,100 z;M 50,50 L 100,0 L 100,100 L 0,100 z;"
+                                />
+                              </path>
+                            </svg>
+                          </a></li>
+                          <li class="sub-level-list">
+                            <ul>
+                              <li><a class="sub-level" href=""> lists</a></li>
+                              <li><a class="sub-level" href=""> tables</a></li>
+                              <li><a class="sub-level" href=""> links & downloads</a></li>
+                              <li><a class="sub-level" href=""> inputs</a></li>
+                              <li><a class="sub-level" href=""> textareas</a></li>
+                              <li><a class="sub-level" href=""> forms</a></li>
+                              <li><a class="sub-level" href=""> labels</a></li>
+                              <li><a class="sub-level" href=""> buttons</a></li>
+                            </ul>
+                          </li>
+                          <li><a class="top-level top-level-dropdown" href="">interactions <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
+                            <path
+                              id="shape"
+                              d="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                              transform="translate(71) rotate(45)"
+                              >
+                              <animate
+                                id="shape-open"
+                                class="shape-open"
+                                attributeName="d"
+                                from="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                                to="M 50,50 L 100,0 L 100,100 L 0,100 z"
+                                repeatount="indefinite"
+                                dur=".2s"
+                                begin="50000s;"
+                                fill="freeze"
+                                values="M 50,50 L 100,0 L 100,100 L 0,100 z;M 0,0 L 100,0 L 50,50 L 0,100 z;"
+                                />
+                                <animate
+                                  id="shape-close"
+                                  class="shape-close"
+                                  attributeName="d"
+                                  from="M 0,0 L 100,0 L 50,50 L 0,100 z"
+                                  to="M 0,0 L 100,0 L 50,50 L 0,100 z"
+                                  repeatount="indefinite"
+                                  dur=".2s"
+                                  begin="50000s;"
+                                  fill="freeze"
+                                  values="M 0,0 L 100,0 L 50,50 L 0,100 z;M 50,50 L 100,0 L 100,100 L 0,100 z;"
+                                  />
+                                </path>
+                              </svg></a></li>
+                              <li class="sub-level-list">
+                                <ul>
+                                  <li><a class="sub-level" href=""> animations</a></li>
+                                  <li><a class="sub-level" href=""> slideshows</a></li>
+                                  <li><a class="sub-level" href=""> modals</a></li>
+                                  <li><a class="sub-level" href=""> lightboxes</a></li>
+                                  <li><a class="sub-level" href=""> dropdowns</a></li>
+                                  <li><a class="sub-level" href=""> tooltips</a></li>
+                                  <li><a class="sub-level" href=""> switches</a></li>
+                                  <li><a class="sub-level" href=""> breadcrumbs</a></li>
+                                  <li><a class="sub-level" href=""> pagination</a></li>
+                                  <li><a class="sub-level" href=""> range sliders</a></li>
+                                  <li><a class="sub-level" href=""> alerts & warnings</a></li>
+                                  <li><a class="sub-level" href=""> progress bars</a></li>
+                                  <li><a class="sub-level" href=""> accordions</a></li>
+                                  <li><a class="sub-level" href=""> tabs</a></li>
+                                </ul>
+                              </li>
+                              
+                            </ul>
+                          </aside>
+                          <!-- Add your site or application content here -->
+                          <div class="content-container container">
+                            <div ng-view=""></div>
+                            <div class="footer">
+                              <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+                            </div>
+                          </div>
+                          
+                          <!-- <a class="exit-off-canvas"></a> -->
+                        </div>
+                      </div>
+                      <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+                      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+                      <script>
+                      !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+                      (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+                      r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+                      }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                      ga('create', 'UA-XXXXX-X');
+                      ga('send', 'pageview');
+                      </script>
+                      <!-- build:js(.) scripts/vendor.js -->
+                      <!-- bower:js -->
+                      <script src="bower_components/modernizr/modernizr.js"></script>
+                      <script src="bower_components/jquery/dist/jquery.js"></script>
+                      <script src="bower_components/angular/angular.js"></script>
+                      <script src="bower_components/angular-animate/angular-animate.js"></script>
+                      <script src="bower_components/angular-aria/angular-aria.js"></script>
+                      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+                      <script src="bower_components/angular-messages/angular-messages.js"></script>
+                      <script src="bower_components/angular-resource/angular-resource.js"></script>
+                      <script src="bower_components/angular-route/angular-route.js"></script>
+                      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+                      <script src="bower_components/angular-touch/angular-touch.js"></script>
+                      <script src="bower_components/fastclick/lib/fastclick.js"></script>
+                      <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+                      <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+                      <script src="bower_components/foundation/js/foundation.js"></script>
+                      <!-- endbower -->
+                      <!-- endbuild -->
+                      <!-- build:js({.tmp,app}) scripts/scripts.js -->
+                      <script src="scripts/app.js"></script>
+                      <script src="scripts/controllers/main.js"></script>
+                      <script src="scripts/controllers/about.js"></script>
+                      <!-- endbuild -->
+                      <!-- custom -->
+                      <script src="scripts/main.js"></script>
+                    </body>
+                  </html>
