@@ -22,35 +22,49 @@
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="off-canvas-wrap" data-offcanvas>
-      <div class="inner-wrap">
-        <nav id="top-bar" class="top-bar" data-topbar role="navigation">
-          <ul class="title-area">
-            <li class="toggle-topbar left-off-canvas-toggle"><a class="toggle-nav"><span><i class="ion-pound"></i></span></a></li>
-            <li class="name">
-              <h1><a href="#/">Rexel Style Guide</a></h1>
-            </li>
-            
-            <section class="top-bar-section">
-              <ul class="left">
-                <li class="has-form">
-                  <div class="row collapse">
-                    <div class="large-8 small-9 columns">
-                      <input type="text" placeholder="Enter keywords...">
+    <div class="off-canvas-wrap move-right" data-offcanvas>
+      <div class="inner-wrap sidenav-open">
+        <div class="top-bar-wrap">
+          <nav id="top-bar" class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+              <li class="toggle-topbar left-off-canvas-toggle"><a class="toggle-nav">
+                <div class='hamwrapper checked'>
+                  <ul class='hamburger'>
+                    <li class='first'></li>
+                    <li class='second'></li>
+                    <li class='third'></li>
+                  </ul>
+                </div>
+              </span></a></li>
+              <li class="name">
+                <h1><a href="#/">Rexel Style Guide v0.5</a></h1>
+              </li>
+              
+              <section class="top-bar-section">
+                <ul class="left">
+                  <li class="has-form">
+                    <div class="row collapse">
+                      <div class="large-12 columns">
+                        <div class="row collapse">
+                          <div class="small-9 columns">
+                            <input type="text" placeholder="Enter Keywords...">
+                          </div>
+                          <div class="small-3 columns">
+                            <a href="" class="button postfix"><span>Go</span></a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="large-4 small-3 columns">
-                      <a href="" class=""><i class="ion-android-search"></i></a>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </section>
-          </ul>
-        </nav>
+                  </li>
+                </ul>
+              </section>
+            </ul>
+          </nav>
+        </div>
         <aside class="left-off-canvas-menu">
           <ul class="off-canvas-list">
-            <li class="rx-logo-area"><img src="images/hero-image.svg" width="150"><br>rexel ux title here</li>
-            <li><a class="top-level top-level-direct" href="">overview</a></li>
+            <li class="rx-logo-area"><img src="images/rexelux-200.png" width="150"><br>living style guide</li>
+            <li><a class="top-level top-level-direct active" href="">overview</a></li>
             <li><a class="top-level top-level-direct" href="">colors</a></li>
             <li><a class="top-level top-level-direct" href="">logos</a></li>
             <li><a class="top-level top-level-direct" href="">maps</a></li>
@@ -275,7 +289,7 @@
                           <div class="content-container container">
                             <div ng-view=""></div>
                             <div class="footer">
-                              <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+                              <p>Rexel Footer</p>
                             </div>
                           </div>
                           
