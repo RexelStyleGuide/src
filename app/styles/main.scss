@@ -337,17 +337,48 @@ section.overview {
     }
   }
   .overview-doc {
-    width:90%;
-    margin:0 auto;
+    
     margin-top:-100px;
 
   }
 }
 
-.panel {
+.panel, section.panel {
+  width:90%;
+    margin:0 auto;
   .hash-title {
     text-transform:uppercase;
     color: #85868d;
+    font-size:2rem;
+    font-weight:300;
+    -o-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -khtml-transition: color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+    cursor:pointer;
+  }
+  .hash-title:hover {
+    color:#008cba;
+  }
+}
+
+section.panel{
+  margin-top:50px;
+}
+
+footer {
+  height:75px;
+  line-height:75px;
+  margin-top:50px;
+  color:#fff;
+  background:#008cba;
+  p {
+    font-weight:300;
+    line-height:75px;
+    text-transform:uppercase;
+    letter-spacing:0.1rem;
   }
 }
 
