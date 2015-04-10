@@ -307,13 +307,11 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 //sections
-section.overview {
-  .header {
+.header {
     padding: 30px;
     height:500px;
     background: url(/images/07t2mb2.gif);
     color:#fff;
-
     h1,h2,h3,h4,h5,h6 {
       color:#fff;
     }
@@ -336,16 +334,12 @@ section.overview {
       }
     }
   }
-  .overview-doc {
-    
-    margin-top:-100px;
 
-  }
-}
 
-.panel, section.panel {
+section.panel {
   width:90%;
-    margin:0 auto;
+  margin:0 auto;
+  min-height:150px;
   .hash-title {
     text-transform:uppercase;
     color: #85868d;
@@ -367,6 +361,12 @@ section.overview {
 section.panel{
   margin-top:50px;
 }
+
+section#overview.panel {
+    
+    margin-top:-100px;
+
+  }
 
 footer {
   height:75px;

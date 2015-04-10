@@ -20,8 +20,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
-  ])
+    'ngTouch',
+    'duScroll'
+  ]).value('duScrollOffset', 50)
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -33,3 +34,4 @@ angular
         redirectTo: '/'
       });
   });
+

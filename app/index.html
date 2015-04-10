@@ -37,7 +37,7 @@
                 </div>
               </span></a></li>
               <li class="name">
-                <h1><a href="#/">Rexel Style Guide v0.5</a></h1>
+                <h1><a href="#/">Rexel Style Guide v0.5.1</a></h1>
               </li>
               
               <section class="top-bar-section">
@@ -61,15 +61,15 @@
             </ul>
           </nav>
         </div>
-        <aside class="left-off-canvas-menu">
-          <ul class="off-canvas-list">
+        <aside class="left-off-canvas-menu" ng-controller="MainCtrl">
+          <ul class="off-canvas-list"  du-scroll-container="content">
             <li class="rx-logo-area"><img src="images/rexelux-200.png" width="150"><br>living style guide</li>
-            <li><a class="top-level top-level-direct active" href="">overview</a></li>
-            <li><a class="top-level top-level-direct" href="">colors</a></li>
-            <li><a class="top-level top-level-direct" href="">logos</a></li>
-            <li><a class="top-level top-level-direct" href="">maps</a></li>
-            <li><a class="top-level top-level-direct" href="">banners</a></li>
-            <li><a class="top-level top-level-dropdown" href="">responsive <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
+            <li><a class="top-level top-level-direct" href="#overview" du-scrollspy du-smooth-scroll>overview</a></li>
+            <li><a class="top-level top-level-direct" href="#colors" du-scrollspy du-smooth-scroll>colors</a></li>
+            <li><a class="top-level top-level-direct" href="#logos" du-scrollspy du-smooth-scroll>logos</a></li>
+            <li><a class="top-level top-level-direct" href="#maps" du-scrollspy du-smooth-scroll>maps</a></li>
+            <li><a class="top-level top-level-direct" href="#banners" du-scrollspy du-smooth-scroll>banners</a></li>
+            <li><a class="top-level top-level-dropdown" href="#responsive" du-spy-context="responsive" du-scrollspy du-smooth-scroll>responsive <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
               <path
                 id="shape"
                 d="M 50,50 L 100,0 L 100,100 L 0,100 z"
@@ -103,12 +103,12 @@
                 </svg></a></li>
                 <li class="sub-level-list">
                   <ul>
-                    <li><a class="sub-level" href=""> containers</a></li>
-                    <li><a class="sub-level" href=""> media queries</a></li>
-                    <li><a class="sub-level" href=""> visibility</a></li>
+                    <li><a class="sub-level" href="#containers" du-scrollspy du-smooth-scroll> containers</a></li>
+                    <li><a class="sub-level" href="#mediaqueries" du-scrollspy du-smooth-scroll> media queries</a></li>
+                    <li><a class="sub-level" href="#visibility" du-scrollspy du-smooth-scroll> visibility</a></li>
                   </ul>
                 </li>
-                <li><a class="top-level top-level-dropdown" href="">typography <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
+                <li><a class="top-level top-level-dropdown" href="#typography" du-spy-context="typography" du-scrollspy du-smooth-scroll>typography <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
                   <path
                     id="shape"
                     d="M 50,50 L 100,0 L 100,100 L 0,100 z"
@@ -142,12 +142,12 @@
                     </svg></a></li>
                     <li class="sub-level-list">
                       <ul>
-                        <li><a class="sub-level" href=""> fonts</a></li>
-                        <li><a class="sub-level" href=""> iconography</a></li>
-                        <li><a class="sub-level" href=""> formatting</a></li>
+                        <li><a class="sub-level" href="#fonts" du-scrollspy du-smooth-scroll> fonts</a></li>
+                        <li><a class="sub-level" href="#iconography" du-scrollspy du-smooth-scroll> iconography</a></li>
+                        <li><a class="sub-level" href="#formatting" du-scrollspy du-smooth-scroll> formatting</a></li>
                       </ul>
                     </li>
-                    <li><a class="top-level top-level-dropdown" href="">media <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
+                    <li><a class="top-level top-level-dropdown" href="#media" du-spy-context="media" du-scrollspy du-smooth-scroll>media <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
                       <path
                         id="shape"
                         d="M 50,50 L 100,0 L 100,100 L 0,100 z"
@@ -181,13 +181,13 @@
                         </svg></a></li>
                         <li class="sub-level-list">
                           <ul>
-                            <li><a class="sub-level" href=""> product images</a></li>
-                            <li><a class="sub-level" href=""> thumbnails</a></li>
-                            <li><a class="sub-level" href=""> videos</a></li>
-                            <li><a class="sub-level" href=""> 360 photos</a></li>
+                            <li><a class="sub-level" href="#productimages" du-scrollspy du-smooth-scroll> product images</a></li>
+                            <li><a class="sub-level" href="#thumbnails" du-scrollspy du-smooth-scroll> thumbnails</a></li>
+                            <li><a class="sub-level" href="#videos" du-scrollspy du-smooth-scroll>videos</a></li>
+                            <li><a class="sub-level" href="#360photos" du-scrollspy du-smooth-scroll> 360 photos</a></li>
                           </ul>
                         </li>
-                        <li><a class="top-level top-level-dropdown" href="">html <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
+                        <li><a class="top-level top-level-dropdown" href="#html" du-spy-context="html" du-scrollspy du-smooth-scroll>html <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
                           <path
                             id="shape"
                             d="M 50,50 L 100,0 L 100,100 L 0,100 z"
@@ -222,17 +222,17 @@
                           </a></li>
                           <li class="sub-level-list">
                             <ul>
-                              <li><a class="sub-level" href=""> lists</a></li>
-                              <li><a class="sub-level" href=""> tables</a></li>
-                              <li><a class="sub-level" href=""> links & downloads</a></li>
-                              <li><a class="sub-level" href=""> inputs</a></li>
-                              <li><a class="sub-level" href=""> textareas</a></li>
-                              <li><a class="sub-level" href=""> forms</a></li>
-                              <li><a class="sub-level" href=""> labels</a></li>
-                              <li><a class="sub-level" href=""> buttons</a></li>
+                              <li><a class="sub-level" href="#lists" du-scrollspy du-smooth-scroll> lists</a></li>
+                              <li><a class="sub-level" href="#tables" du-scrollspy du-smooth-scroll> tables</a></li>
+                              <li><a class="sub-level" href="#linksdownloads" du-scrollspy du-smooth-scroll> links & downloads</a></li>
+                              <li><a class="sub-level" href="#inputs" du-scrollspy du-smooth-scroll> inputs</a></li>
+                              <li><a class="sub-level" href="#textareas" du-scrollspy du-smooth-scroll> textareas</a></li>
+                              <li><a class="sub-level" href="#forms" du-scrollspy du-smooth-scroll> forms</a></li>
+                              <li><a class="sub-level" href="#labels" du-scrollspy du-smooth-scroll> labels</a></li>
+                              <li><a class="sub-level" href="#buttons" du-scrollspy du-smooth-scroll> buttons</a></li>
                             </ul>
                           </li>
-                          <li><a class="top-level top-level-dropdown" href="">interactions <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
+                          <li><a class="top-level top-level-dropdown" href="#interactions" du-spy-context="interactions" du-scrollspy du-smooth-scroll>interactions <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 142" width="15" height="15">
                             <path
                               id="shape"
                               d="M 50,50 L 100,0 L 100,100 L 0,100 z"
@@ -266,31 +266,27 @@
                               </svg></a></li>
                               <li class="sub-level-list">
                                 <ul>
-                                  <li><a class="sub-level" href=""> animations</a></li>
-                                  <li><a class="sub-level" href=""> slideshows</a></li>
-                                  <li><a class="sub-level" href=""> modals</a></li>
-                                  <li><a class="sub-level" href=""> lightboxes</a></li>
-                                  <li><a class="sub-level" href=""> dropdowns</a></li>
-                                  <li><a class="sub-level" href=""> tooltips</a></li>
-                                  <li><a class="sub-level" href=""> switches</a></li>
-                                  <li><a class="sub-level" href=""> breadcrumbs</a></li>
-                                  <li><a class="sub-level" href=""> pagination</a></li>
-                                  <li><a class="sub-level" href=""> range sliders</a></li>
-                                  <li><a class="sub-level" href=""> alerts & warnings</a></li>
-                                  <li><a class="sub-level" href=""> progress bars</a></li>
-                                  <li><a class="sub-level" href=""> accordions</a></li>
-                                  <li><a class="sub-level" href=""> tabs</a></li>
+                                  <li><a class="sub-level" href="#animations" du-scrollspy du-smooth-scroll>animations</a></li>
+                                  <li><a class="sub-level" href="#slideshows" du-scrollspy du-smooth-scroll>slideshows</a></li>
+                                  <li><a class="sub-level" href="#modals" du-scrollspy du-smooth-scroll>modals</a></li>
+                                  <li><a class="sub-level" href="#lightboxes" du-scrollspy du-smooth-scroll>lightboxes</a></li>
+                                  <li><a class="sub-level" href="#dropdowns" du-scrollspy du-smooth-scroll>dropdowns</a></li>
+                                  <li><a class="sub-level" href="#tooltips" du-scrollspy du-smooth-scroll>tooltips</a></li>
+                                  <li><a class="sub-level" href="#switches" du-scrollspy du-smooth-scroll>switches</a></li>
+                                  <li><a class="sub-level" href="#breadcrumbs" du-scrollspy du-smooth-scroll>breadcrumbs</a></li>
+                                  <li><a class="sub-level" href="#pagination" du-scrollspy du-smooth-scroll>pagination</a></li>
+                                  <li><a class="sub-level" href="#rangesliders" du-scrollspy du-smooth-scroll>range sliders</a></li>
+                                  <li><a class="sub-level" href="#alertswarnings" du-scrollspy du-smooth-scroll>alerts & warnings</a></li>
+                                  <li><a class="sub-level" href="#progressbars" du-scrollspy du-smooth-scroll>progress bars</a></li>
+                                  <li><a class="sub-level" href="#accordions" du-scrollspy du-smooth-scroll>accordions</a></li>
+                                  <li><a class="sub-level" href="#tabs" du-scrollspy du-smooth-scroll>tabs</a></li>
                                 </ul>
                               </li>
-                              
                             </ul>
                           </aside>
                           <!-- Add your site or application content here -->
-                          <div class="content-container container">
+                          <div  du-scroll-container id="content" class="content-container container">
                             <div ng-view=""></div>
-                            <footer class="text-center">
-                              <p>Rexel Footer</p>
-                            </footer>
                           </div>
                           
                           <!-- <a class="exit-off-canvas"></a> -->
