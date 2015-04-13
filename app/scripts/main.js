@@ -8,9 +8,9 @@ $(document).ready(function() {
 	});
 
 	//sidenav dropdowns
-	$('.off-canvas-list li a').click(function() {
-		$(this).addClass('active').parent().siblings().find('a').removeClass('active');
-	});
+	// $('.off-canvas-list li a').click(function() {
+	// 	$(this).addClass('active').parent().siblings().find('a').removeClass('active');
+	// });
 
 	var on = false;
 	function dropdownCaret(element) {
@@ -24,6 +24,7 @@ $(document).ready(function() {
 		dropdownCaret($(this));
 	});
 
+	
 
 });
 
