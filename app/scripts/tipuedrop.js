@@ -77,7 +77,7 @@ http://www.tipue.com/drop
                               out += '</div>';         
 
 
-                              $('#tipue_drop_content').html(out).find('a').first().focus();
+                              $('#tipue_drop_content').html(out);
 
 
                               $('#tipue_drop_content').fadeIn(set.speed);
@@ -96,8 +96,14 @@ http://www.tipue.com/drop
 
                $(document).keydown( 
                     function(e) {
-                         if (e.keyCode == 40) {      
-                              $("a:focus").next('a').focus();   
+                         if (e.keyCode == 40) {
+                              if ($('#tipue_drop_wrapper a:focus').length <= 0) {
+                                   $('#tipue_drop_wrapper').find('a').first().focus();
+                              } else {
+                                   $("a:focus").next('a').focus();
+                              }
+                                    
+                                 
                          }
                          // Up key
                          if (e.keyCode == 38) {      
