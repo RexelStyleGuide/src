@@ -17,6 +17,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/tipuedrop.css">
   </head>
   <base href="/">
   <body ng-app="srcApp">
@@ -47,12 +48,11 @@
                     <div class="row collapse">
                       <div class="large-12 columns">
                         <div class="row collapse">
-                          <div class="small-9 columns">
-                            <input type="text" placeholder="Enter Keywords...">
+                          <div class="small-12 columns">
+                            <input type="text" placeholder="Enter Keywords..." id="tipue_drop_input" autocomplete="on">
+                            <div id="tipue_drop_content" du-scroll-container="content"></div>
                           </div>
-                          <div class="small-3 columns">
-                            <a href="" class="button postfix"><span>Go</span></a>
-                          </div>
+                          
                         </div>
                       </div>
                     </div>
@@ -327,6 +327,8 @@
                       <script src="scripts/app.js"></script>
                       <script src="scripts/controllers/main.js"></script>
                       <script src="scripts/controllers/about.js"></script>
+                      <script src="scripts/tipuedrop_content.js"></script>
+                      <script src="scripts/tipuedrop.js"></script>
                       <script src="scripts/main.js"></script>
                       <!-- endbuild -->
                       <!-- custom -->

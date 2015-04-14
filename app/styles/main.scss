@@ -10,7 +10,12 @@
 
 body {
     background: #fff;
+
+    *:focus {
+    outline: 0;
 }
+}
+
 
 body, h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
@@ -359,7 +364,8 @@ section.panel {
 }
 
 section.panel{
-  margin-top:50px;
+  margin-top:75px;
+  padding-top:50px;
 }
 
 section#overview.panel {

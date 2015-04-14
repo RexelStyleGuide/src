@@ -22,7 +22,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'duScroll'
-  ]).value('duScrollOffset', 50)
+  ])
+  // .value('duScrollOffset', 50)
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

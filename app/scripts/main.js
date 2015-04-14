@@ -1,5 +1,6 @@
 'use strict';
 $(document).ready(function() {
+	$('#tipue_drop_input').tipuedrop();
 
 	//off canvas fixes
 	$('.toggle-nav').click(function() {
@@ -24,7 +25,7 @@ $(document).ready(function() {
 		dropdownCaret($(this));
 	});
 
-	
+
 
 });
 
