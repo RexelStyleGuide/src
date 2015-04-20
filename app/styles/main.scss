@@ -404,6 +404,7 @@ footer {
 
     .result-link {
       display:flex;
+      color:#008cba;
       border-bottom:1px solid #d3d3db;
       -o-transition: all 0.1s ease-in-out;
         -moz-transition: all 0.1s ease-in-out;
@@ -426,12 +427,22 @@ footer {
             background: #272830;
             color: #fff;
             margin: 5px;
-            margin-top:8px;
+            margin-top:10px;
             margin-left:10px;
             text-align: center;
             border-radius: 50%;
             vertical-align:middle;
+            -webkit-transition: -webkit-transform .2s ease-in-out;
+            transition: transform .2s ease-in-out;
+
+            
+
         }
+        .dd-left:hover {
+              transform:rotate(15deg);
+    -ms-transform:rotate(15deg);
+    -webkit-transform:rotate(15deg);
+            }
         .dd-right {
             vertical-align: middle;
             padding: 5px 20px 5px 15px;
@@ -440,8 +451,9 @@ footer {
             }
             .dd-right-description {
                 font-weight: 300;
-                font-size: 0.85rem;
+                font-size: 0.80rem;
                 line-height:1rem;
+                margin-bottom:5px;
             }
         }
     }
