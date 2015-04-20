@@ -23,7 +23,7 @@
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="off-canvas-wrap move-right" data-offcanvas>
+    <div class="off-canvas-wrap move-right" data-offcanvas ng-controller="MainCtrl">
       <div class="inner-wrap sidenav-open">
         <div class="top-bar-wrap">
           <nav id="top-bar" class="top-bar" data-topbar role="navigation" du-scroll-container="content">
@@ -48,10 +48,27 @@
                       <div class="large-12 columns">
                         <div class="row collapse">
                           <div class="small-12 columns">
-                            <input type="text" placeholder="Enter Keywords..." id="tipue_drop_input" autocomplete="on">
-                            <div id="tipue_drop_content" du-scroll-container="content"></div>
-                          </div>
-                          
+                            <form method="POST">
+                              <input type="search" placeholder="Enter Keywords..." ng-model="search">
+
+                              <div id="drop_content" ng-show="search.length">
+                                <a
+                                  class="result-link"
+                                  du-scrollspy du-smooth-scroll
+                                  ng-repeat="section in sections.sectionIndex | filter:search | orderBy:'title'"
+                                  ng-show="$index<5"
+                                  ng-click="$parent.search= ''"
+                                  href="{{section.loc}}">
+                                  <div class="dd-left">{{section.thumb}}</div>
+                                  <div class="dd-right">
+                                    <div class="dd-right-title">{{section.title}}</div>
+                                    <div class="dd-right-description">{{section.text}}</div>
+                                  </div>
+                                </a>
+                                
+                              </div>
+                            </div>
+                          </form>
                         </div>
                       </div>
                     </div>
@@ -61,7 +78,7 @@
             </ul>
           </nav>
         </div>
-        <aside class="left-off-canvas-menu" ng-controller="MainCtrl">
+        <aside class="left-off-canvas-menu">
           <ul class="off-canvas-list"  du-scroll-container="content">
             <li class="rx-logo-area"><img src="images/rexelux-200.png" width="150"><br>living style guide</li>
             <li><a class="top-level top-level-direct" href="#overview" du-scrollspy du-smooth-scroll>overview</a></li>
@@ -315,19 +332,19 @@
                       <script src="bower_components/angular-route/angular-route.js"></script>
                       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
                       <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+                      <script src="bower_components/angular-filter/dist/angular-filter.js"></script>
                       <script src="bower_components/angular-touch/angular-touch.js"></script>
                       <script src="bower_components/fastclick/lib/fastclick.js"></script>
                       <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
                       <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
                       <script src="bower_components/foundation/js/foundation.js"></script>
+                      <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
                       <!-- endbower -->
                       <!-- endbuild -->
                       <!-- build:js({.tmp,app}) scripts/scripts.js -->
                       <script src="scripts/app.js"></script>
                       <script src="scripts/controllers/main.js"></script>
                       <script src="scripts/controllers/about.js"></script>
-                      <script src="scripts/tipuedrop_content.js"></script>
-                      <script src="scripts/tipuedrop.js"></script>
                       <script src="scripts/main.js"></script>
                       <!-- endbuild -->
                       <!-- custom -->

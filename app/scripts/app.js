@@ -21,9 +21,11 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'duScroll'
+    'duScroll',
+    'angular.filter',
+    'ui.utils'
   ])
-  // .value('duScrollOffset', 50)
+  .value('duScrollOffset', 50)
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

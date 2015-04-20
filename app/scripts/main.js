@@ -1,17 +1,12 @@
 'use strict';
 $(document).ready(function() {
-	$('#tipue_drop_input').tipuedrop();
+	//$('#tipue_drop_input').tipuedrop();
 
 	//off canvas fixes
 	$('.toggle-nav').click(function() {
 		$('.inner-wrap').toggleClass('sidenav-open');
 		$(this).find('.hamwrapper').toggleClass('checked');
 	});
-
-	//sidenav dropdowns
-	// $('.off-canvas-list li a').click(function() {
-	// 	$(this).addClass('active').parent().siblings().find('a').removeClass('active');
-	// });
 
 	var on = false;
 	function dropdownCaret(element) {
@@ -24,8 +19,6 @@ $(document).ready(function() {
 		$(this).toggleClass('slideOpen').parent().next('li').slideToggle();
 		dropdownCaret($(this));
 	});
-
-
 
 });
 

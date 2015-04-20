@@ -1,4 +1,4 @@
-var tipuedrop = {'pages': [
+var sections = {'pages': [
      {'title': 'Overview', 'thumb': 'img/search.png', 'text': 'Description', 'tags': 'tagshere', 'loc': '#overview'},
      {'title': 'Colors', 'thumb': 'img/drop.png', 'text': 'Description', 'tags': 'tagshere', 'loc': '#colors'},
      {'title': 'Logos', 'thumb': 'img/tipr.png', 'text': 'Description', 'tags': 'Tipue', 'loc': '#logos'},
