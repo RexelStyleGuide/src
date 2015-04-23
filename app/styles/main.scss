@@ -334,11 +334,18 @@ section.panel {
     width: 90%;
     margin: 0 auto;
     min-height: 150px;
+    margin-top: 75px;
+    padding-top: 50px;
+    .panel {
+      background: #fff;
+    }
+    h1,h2,h3,h4,h5,h6 {
+      color: #85868d;
+      font-weight:300;
+    }
     .hash-title {
         text-transform: uppercase;
-        color: #85868d;
         font-size: 2rem;
-        font-weight: 300;
         -o-transition: color 0.2s ease-in-out;
         -moz-transition: color 0.2s ease-in-out;
         -khtml-transition: color 0.2s ease-in-out;
@@ -350,12 +357,34 @@ section.panel {
     .hash-title:hover {
         color: #008cba;
     }
+    .subsection {
+      margin-top:20px;
+    } 
+    span.code {
+      font-family: Consolas, "Liberation Mono", Courier, monospace;
+      color: #333;
+    }
+    //colors
+    .color {
+      text-align:center;
+      color:#fff;
+      font-weight:200;
+      display:inline-block;
+      height:150px;
+      width:150px;
+      padding-top:55px;
+      margin-right:5px;
+      border-radius:50%;
+      -webkit-border-radius:50%;
+      -moz-border-radius:50%;
+      .code {
+        color:#fff;
+      }
+    }
+    p i {position:relative; top:2px;}
+    
 }
 
-section.panel {
-    margin-top: 75px;
-    padding-top: 50px;
-}
 
 section#overview.panel {
     margin-top: -100px;
@@ -448,12 +477,14 @@ footer {
             padding: 5px 20px 5px 15px;
             .dd-right-title {
                 font-weight: 400;
+                color:#272830;
             }
             .dd-right-description {
                 font-weight: 300;
                 font-size: 0.80rem;
                 line-height:1rem;
                 margin-bottom:5px;
+                color:#85868d;
             }
         }
     }
@@ -465,3 +496,28 @@ footer {
       background:#f2f2f2;
     }
 }
+
+//for specificity
+body{.panel{
+
+//live usage
+  //colors
+.rx-red-bg {background:#d95553;}
+.rx-red {color:#d95553;}
+.rx-yellow-bg {background:#efad58;}
+.rx-yellow {color:#efad58;}
+.rx-green-bg {background:#007b34;}
+.rx-green {color:#007b34;}
+.rx-blue-bg {background:#066cb6;}
+.rx-blue {color:#066cb6;}
+
+  //icons
+i.fa-times { color: #d95553; }
+i.fa-exclamation { color: #efad58; }
+i.fa-check { color: #007b34; }
+i.fa-question-circle { color: #066cb6; }
+
+
+}}
+
+
