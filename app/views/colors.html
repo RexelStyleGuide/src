@@ -1,26 +1,260 @@
-<h2 class="hash-title">#colors</h2>
+<h2 class="hash-title">Colors</h2>
 <div class="panel">
-	<p>
-		<h3>Usage:</h3> 
-		<div class="alert-box alert rx-red-bg radius">IMPORTANT NOTE: DO NOT use color classes with JavaScript. Colors are for style purposes only.</div>
-CSS: For text color, use <code>.rx-%colorName%</code>, where <code>%colorName%</code> is the desired color (examples below). For background color, use <code>.rx-%colorName%-bg</code>	 </p>
-</div>
+	<div class="large-12 columns">
+		<h3 class="subsection">Usage</h3>
+		<p>Each color class is prepended with <code>rx-</code> followed by the color name. For example; If you want to make some text <span class="rx-orange">Rexel Orange</span>, add a class of <code>rx-orange</code>to the element. If you append <code>rx-orange</code> with <code>-bg</code>, making the class <code>rx-orange-bg</code>, the background color of the element will use <span class="rx-orange-bg">Rexel Orange</span>. If you replace <code>-bg</code> with <code>-br</code>, making the class <code>rx-orange-br</code> you are now targeting the element's border-color. <span class="rx-orange-br">Rexel Orange</span> will now show with a <span class="rx-orange">Rexel Orange</span> border of <code>1px solid #ee7803</code>. </p>	
+	</div>
+
+		<div class="row">
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-white-bg rx-br"> </div>
+				<div class="color-info">
+					<strong>Rexel White</strong>
+					<code class="right">#ffffff</code>
+					<hr>
+					<code>.rx-white</code><br>
+					<code>.rx-white-bg</code><br>
+					<code>.rx-white-br</code><br>
+					<code>$rx-white</code>
+				</div>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-grey-bg rx-br"> </div>
+				<div class="color-info">
+					<strong>Rexel Grey</strong>
+					<code class="right">#dadada</code>
+					<hr>
+					<code>.rx-grey</code><br>
+					<code>.rx-grey-bg</code><br>
+					<code>.rx-grey-br</code><br>
+					<code>$rx-grey</code>
+				</div>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-brGrey-bg"> </div>
+				<div class="color-info">
+					<strong>Rexel Border Grey</strong>
+					<code class="right">#f5f5f5</code>
+					<hr>
+					<code>.rx-brGrey</code><br>
+					<code>.rx-brGrey-bg</code><br>
+					<code>.rx-brGrey-br</code><br>
+					<code>$rx-brGrey</code>
+				</div>
+			</div>
+
+			
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-textGrey-bg"> </div>
+				<div class="color-info">
+					<strong>Rexel Text Grey</strong>
+					<code class="right">#58585a</code>
+					<hr>
+					<code>.rx-textGrey</code><br>
+					<code>.rx-textGrey-bg</code><br>
+					<code>.rx-textGrey-br</code><br>
+					<code>$rx-textGrey</code>
+				</div>
+			</div>
+
+			
+			
+			<div class="large-12 columns">
+			<h3 class="subsection">Indicator Text and Icon Colors</h3>
+	<p>These Colors are used only when we need to indicate something of importance to the customer about our services or products. etc. </p>	
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-ind-red-bg"> </div>
+				<div class="color-info">
+					<strong>Indicator Red</strong>
+					<code class="right">#d95553</code>
+					<hr>
+					<code>.rx-ind-red</code><br>
+					<code>.rx-ind-red-bg</code><br>
+					<code>.rx-ind-red-br</code><br>
+					<code>$rx-ind-red</code>
+				</div>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-ind-yellow-bg"> </div>
+				<div class="color-info">
+					<strong>Indicator Yellow</strong>
+					<code class="right">#efad58</code>
+					<hr>
+					<code>.rx-ind-yellow</code><br>
+					<code>.rx-ind-yellow-bg</code><br>
+					<code>.rx-ind-yellow-br</code><br>
+					<code>$rx-ind-yellow</code>
+				</div>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-ind-green-bg"> </div>
+				<div class="color-info">
+					<strong>Indicator Green</strong>
+					<code class="right">#007b34</code>
+					<hr>
+					<code>.rx-ind-green</code><br>
+					<code>.rx-ind-green-bg</code><br>
+					<code>.rx-ind-green-br</code><br>
+					<code>$rx-ind-green</code>
+				</div>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-ind-blue-bg"> </div>
+				<div class="color-info">
+					<strong>Indicator Blue</strong>
+					<code class="right">#066cb6</code>
+					<hr>
+					<code>.rx-ind-blue</code><br>
+					<code>.rx-ind-blue-bg</code><br>
+					<code>.rx-ind-blue-br</code><br>
+					<code>$rx-ind-blue</code>
+				</div>
+			</div>
 
 
-<div class="panel">
-	<h3 class="subsection">Indicator Text and Icon Colors</h3>
-	<p>These Colors are used only when we need to indicate something of importance to the customer about our services or products. etc. </p>
-	<span class="color rx-red-bg"><span class="code">.rx-red-bg<br>#d95553</span></span>
-	<span class="color rx-yellow-bg"><span class="code">.rx-yellow-bg<br>#efad58</span></span>
-	<span class="color rx-green-bg"><span class="code">.rx-green-bg<br>#007b34</span></span>
-	<span class="color rx-blue-bg"><span class="code">.rx-blue-bg<br>#066cb6</span></span>
-	<br><br>
-	<ul>
-		<li class="rx-red"><strong>RED</strong> indicator text is <code>#d95553</code> with a class of <code>.rx-red</code></li>
-		<li class="rx-yellow"><strong>YELLOW</strong> indicator text is <code>#efad58</code> with a class of <code>.rx-yellow</code></li>
-		<li class="rx-green"><strong>GREEN</strong> indicator text is <code>#007b34</code> with a class of <code>.rx-green</code></li>
-		<li class="rx-blue"><strong>BLUE</strong> indicator text is <code>#066cb6</code> with a class of <code>.rx-blue</code></li>
-	</ul>
+
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-blue-bg"> </div>
+				<div class="color-info">
+					<strong>Rexel Blue</strong>
+					<code class="right">#2a3e87</code>
+					<hr>
+					<code>.rx-blue</code><br>
+					<code>.rx-blue-bg</code><br>
+					<code>.rx-blue-br</code><br>
+					<code>$rx-blue</code>
+				</div>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-blue2-bg"> </div>
+				<div class="color-info">
+					<strong>Rexel Secondary Blue</strong>
+					<code class="right">#4487bd</code>
+					<hr>
+					<code>.rx-blue2</code><br>
+					<code>.rx-blue2-bg</code><br>
+					<code>.rx-blue2-br</code><br>
+					<code>$rx-blue2</code>
+				</div>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-orange-bg"> </div>
+				<div class="color-info">
+					<strong>Rexel Orange</strong>
+					<code class="right">#ee7803</code>
+					<hr>
+					<code>.rx-orange</code><br>
+					<code>.rx-orange-bg</code><br>
+					<code>.rx-orange-br</code><br>
+					<code>$rx-orange</code>
+				</div>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-white-bg rx-br"> </div>
+				<div class="color-info">
+					<strong>Rexel White</strong>
+					<code class="right">#ffffff</code>
+					<hr>
+					<code>.rx-white</code><br>
+					<code>.rx-bg-white</code><br>
+					<code>.rx-br-white</code><br>
+					<code>$rx-white</code>
+				</div>
+			</div>
+
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-blue-bg"> </div>
+				<div class="color-info">
+					<strong>Rexel Blue</strong>
+					<code class="right">#2a3e87</code>
+					<hr>
+					<code>.rx-blue</code><br>
+					<code>.rx-blue-bg</code><br>
+					<code>.rx-blue-br</code><br>
+					<code>$rx-blue</code>
+				</div>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-blue2-bg"> </div>
+				<div class="color-info">
+					<strong>Rexel Secondary Blue</strong>
+					<code class="right">#4487bd</code>
+					<hr>
+					<code>.rx-blue2</code><br>
+					<code>.rx-blue2-bg</code><br>
+					<code>.rx-blue2-br</code><br>
+					<code>$rx-blue2</code>
+				</div>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-orange-bg"> </div>
+				<div class="color-info">
+					<strong>Rexel Orange</strong>
+					<code class="right">#ee7803</code>
+					<hr>
+					<code>.rx-orange</code><br>
+					<code>.rx-orange-bg</code><br>
+					<code>.rx-orange-br</code><br>
+					<code>$rx-orange</code>
+				</div>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-white-bg rx-br"> </div>
+				<div class="color-info">
+					<strong>Rexel White</strong>
+					<code class="right">#ffffff</code>
+					<hr>
+					<code>.rx-white</code><br>
+					<code>.rx-bg-white</code><br>
+					<code>.rx-br-white</code><br>
+					<code>$rx-white</code>
+				</div>
+			</div>
+
+		</div>
+
+			<br><br><br><br>
+
+
+
+			body background color. #fff<br>
+			body text fallback color. <br>
+			other text colors.<br>
+			main colors. <br>
+			secondary colors. <br>
+			tertiary colors. <br>
+			border colors. <br>
+			link colors. <br>
+				- visited link colors. <br> 
+				- hover link colors. <br>
+			button colors.<br>
+			hover-button-colors.<br>
+			background-colors. <br>
+			other colors.<br>
+			indicator text and icon colors (see below)<br>
+
+				<br><br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>
+
+
+
+	
 	<hr>
 	<p class="text-center">Our four Indicator Icons have these colors by default. <a du-scrollspy du-smooth-scroll href="#iconography">Go To Indicator Icons <i class="fa fa-chevron-right"></i></a></p>
 </div>

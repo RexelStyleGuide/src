@@ -9,6 +9,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
+    <link rel="stylesheet" href="bower_components/highlightjs/styles/default.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -23,14 +24,14 @@
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="off-canvas-wrap move-right" data-offcanvas ng-controller="MainCtrl">
-      <div class="inner-wrap sidenav-open">
+    <div class="off-canvas-wrap" data-offcanvas ng-controller="MainCtrl">
+      <div class="inner-wrap">
         <div class="top-bar-wrap">
           <nav id="top-bar" class="top-bar" data-topbar role="navigation" du-scroll-container="content">
             <ul class="title-area">
               <li class="toggle-topbar left-off-canvas-toggle">
                 <a class="toggle-nav">
-                  <div class='hamwrapper checked'>
+                  <div class='hamwrapper'>
                     <ul class='hamburger'>
                       <li class='first'></li>
                       <li class='second'></li>
@@ -76,7 +77,7 @@
         </div>
         <aside class="left-off-canvas-menu">
           <ul class="off-canvas-list"  du-scroll-container="content">
-            <li class="rx-logo-area"><img src="images/rexelux-200.png" width="150"><br>living style guide</li>
+            <li class="rx-logo-area"><img src="images/rexelux_200_dark.png" width="150"><br>living style guide</li>
             <li><a class="top-level top-level-direct" href="#overview" du-scrollspy du-smooth-scroll>overview</a></li>
             <li><a class="top-level top-level-direct" href="#colors" du-scrollspy du-smooth-scroll>colors</a></li>
             <li><a class="top-level top-level-direct" href="#logos" du-scrollspy du-smooth-scroll>logos</a></li>
@@ -193,7 +194,10 @@
         </aside>
         <!-- Add your site or application content here -->
         <div  du-scroll-container id="content" class="content-container container">
-          <div ng-view=""></div>
+          <div class="row" ng-view=""></div>
+            <footer class="text-center">
+                              <p>Rexel Footer</p>
+                            </footer>
         </div>
       </div>
     </div>
@@ -227,6 +231,8 @@
     <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
     <script src="bower_components/foundation/js/foundation.js"></script>
     <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="bower_components/highlightjs/highlight.pack.js"></script>
+    <script src="bower_components/angular-highlightjs/build/angular-highlightjs.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->

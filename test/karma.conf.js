@@ -37,6 +37,8 @@ module.exports = function(config) {
       'bower_components/jquery-placeholder/jquery.placeholder.js',
       'bower_components/foundation/js/foundation.js',
       'bower_components/angular-ui-utils/ui-utils.js',
+      'bower_components/highlightjs/highlight.pack.js',
+      'bower_components/angular-highlightjs/build/angular-highlightjs.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

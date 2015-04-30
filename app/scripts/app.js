@@ -23,7 +23,8 @@ angular
     'ngTouch',
     'duScroll',
     'angular.filter',
-    'ui.utils'
+    'ui.utils',
+    'hljs'
   ])
   .value('duScrollOffset', 50)
   .config(function ($routeProvider) {
@@ -39,7 +40,13 @@ angular
   })
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
-  }).
+  })
+  .config(function(hljsServiceProvider) {
+  hljsServiceProvider.setOptions({
+    // replace tab with 4 spaces
+    tabReplace: '    '
+  });
+}).
   run(function($rootScope, $location){
     $rootScope.$on('duScrollspy:becameActive', function($event, $element){
       //Automaticly update location
