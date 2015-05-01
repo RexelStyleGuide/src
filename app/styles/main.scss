@@ -6,7 +6,6 @@
 //live usage
   
   //global
-  $rx-linkBlue: #0F6AB3;
       $rx-grey: #f5f5f5;
     $rx-brGrey: #dadada;
   $rx-textGrey: #58585a;
@@ -23,69 +22,112 @@ $rx-ind-yellow: #efad58;
      $rx-blue2: #4487bd;
     $rx-orange: #ee7803;
 
+  //hagemeyer
+    $rx-hgBlue: #0F6AB3;
+  $rx-hgOrange: #E86D12;
+
 
 //for specificity
 body{.panel{
-  .rx-br {
-    border: 1px solid $rx-brGrey;
-  }
+
+  //borders
+    //base global border style
+    .rx-br {border: 1px solid $rx-brGrey;}
+
+    //border omission
+
+      //omit all 4 sides
+      .rx-br-omit {@extend .rx-br; border-width:0;}
+
+      //omit sides individually
+      .rx-br-top-omit {@extend .rx-br; border-top:0;}
+      .rx-br-right-omit {@extend .rx-br; border-right:0;}
+      .rx-br-bottom-omit {@extend .rx-br; border-bottom:0;}
+      .rx-br-left-omit {@extend .rx-br; border-left:0;}
+    
+    //one sided border only
+    .rx-br-top {@extend .rx-br-omit; border-top-width:1px;}
+    .rx-br-right {@extend .rx-br-omit; border-right-width:1px;}
+    .rx-br-bottom {@extend .rx-br-omit; border-bottom-width:1px;}
+    .rx-br-left {@extend .rx-br-omit; border-left-width:1px;}
+  
+
   //colors
+    //global
+      //grey scale
+      .rx-white {color:$rx-white;}
+      .rx-white-bg {background:$rx-white;}
+      .rx-white-br {@extend .rx-br; border-color:$rx-white;}
 
-.rx-white {color:$rx-white;}
-.rx-white-bg {background:$rx-white;}
-.rx-white-br {@extend .rx-br; border-color:$rx-white;}
+      .rx-grey {color:$rx-grey;}
+      .rx-grey-bg {background:$rx-grey;}
+      .rx-grey-br {@extend .rx-br; border-color:$rx-grey;}
 
-.rx-grey {color:$rx-grey;}
-.rx-grey-bg {background:$rx-grey;}
-.rx-grey-br {@extend .rx-br; border-color:$rx-grey;}
+      .rx-brGrey {color:$rx-brGrey;}
+      .rx-brGrey-bg {background:$rx-brGrey;}
+      .rx-brGrey-br {@extend .rx-br; border-color:$rx-brGrey;}
 
-.rx-brGrey {color:$rx-brGrey;}
-.rx-brGrey-bg {background:$rx-brGrey;}
-.rx-brGrey-br {@extend .rx-br; border-color:$rx-brGrey;}
+      .rx-textGrey {color:$rx-textGrey;}
+      .rx-textGrey-bg {background:$rx-textGrey;}
+      .rx-textGrey-br {@extend .rx-br; border-color:$rx-textGrey;}
+      
+      //indicator colors
+      .rx-ind-red,.rx-err-text,i.fa-times {color:$rx-ind-red;}
+      .rx-ind-red-bg {background:$rx-ind-red;}
+      .rx-ind-red-br {@extend .rx-br; border-color:$rx-ind-red;}
 
-.rx-textGrey {color:$rx-textGrey;}
-.rx-textGrey-bg {background:$rx-textGrey;}
-.rx-textGrey-br {@extend .rx-br; border-color:$rx-textGrey;}
+      .rx-ind-yellow,i.fa-exclamation {color:$rx-ind-yellow;}
+      .rx-ind-yellow-bg {background:$rx-ind-yellow;}
+      .rx-ind-yellow-br {@extend .rx-br; border-color:$rx-ind-yellow;}
 
-.rx-linkBlue {color:$rx-linkBlue;}
-.rx-linkBlue-bg {background:$rx-linkBlue;}
-.rx-linkBlue-br {@extend .rx-br; border-color:$rx-linkBlue;}
+      .rx-ind-green,i.fa-check {color:$rx-ind-green;}
+      .rx-ind-green-bg {background:$rx-ind-green;}
+      .rx-ind-green-br {@extend .rx-br; border-color:$rx-ind-green;}
+
+      .rx-ind-blue,i.fa-question-circle {color:$rx-ind-blue;}
+      .rx-ind-blue-bg {background:$rx-ind-blue;}
+      .rx-ind-blue-br {@extend .rx-br; border-color:$rx-ind-blue;}
+      
+      //Rexel Color Pallete
+      .rx-blue {color:$rx-blue;}
+      .rx-blue-bg {background:$rx-blue;}
+      .rx-blue-br {@extend .rx-br; border-color:$rx-blue;}
+
+      .rx-blue2 {color:$rx-blue2;}
+      .rx-blue2-bg {background:$rx-blue2;}
+      .rx-blue2-br {@extend .rx-br; border-color:$rx-blue2;}
+
+      .rx-orange {color:$rx-orange;}
+      .rx-orange-bg {background:$rx-orange;}
+      .rx-orange-br {@extend .rx-br; border-color:$rx-orange;}
+
+      //Hagemeyer Color Pallete
+      .rx-hgBlue {color:$rx-hgBlue;}
+      .rx-hgBlue-bg {background:$rx-hgBlue;}
+      .rx-hgBlue-br {@extend .rx-br; border-color:$rx-hgBlue;}
+
+      .rx-hgOrange {color:$rx-hgOrange;}
+      .rx-hgOrange-bg {background:$rx-hgOrange;}
+      .rx-hgOrange-br {@extend .rx-br; border-color:$rx-hgOrange;}
+
+      //semi-opaque colors
+      @mixin rx-alpha-attribute($attribute, $color, $background) {
+        $percent: alpha($color) * 100%;
+        $opaque: opacify($color, 1);
+        $solid-color: mix($opaque, $background, $percent);
+        #{$attribute}: $solid-color;
+        #{$attribute}: $color;
+      }
 
 
 
+      //text colors
+      .rx-placeholder-text {@include rx-alpha-attribute('color', rgba($rx-textGrey, 0.75), white);}
+      .rx-disabled-text {@include rx-alpha-attribute('color', rgba($rx-textGrey, 0.50), white);}
+      //overlay
+       
 
-.rx-blue {color:$rx-blue;}
-.rx-blue-bg {background:$rx-blue;}
-.rx-blue-br {@extend .rx-br; border-color:$rx-blue;}
 
-.rx-blue2 {color:$rx-blue2;}
-.rx-blue2-bg {background:$rx-blue2;}
-.rx-blue2-br {@extend .rx-br; border-color:$rx-blue2;}
-
-.rx-orange {color:$rx-orange;}
-.rx-orange-bg {background:$rx-orange;}
-.rx-orange-br {@extend .rx-br; border-color:$rx-orange;}
-
-.rx-ind-red,
-.rx-err-text,
-i.fa-times {color:$rx-ind-red;}
-.rx-ind-red-bg {background:$rx-ind-red;}
-.rx-ind-red-br {@extend .rx-br; border-color:$rx-ind-red;}
-
-.rx-ind-yellow,
-i.fa-exclamation {color:$rx-ind-yellow;}
-.rx-ind-yellow-bg {background:$rx-ind-yellow;}
-.rx-ind-yellow-br {@extend .rx-br; border-color:$rx-ind-yellow;}
-
-.rx-ind-green,
-i.fa-check {color:$rx-ind-green;}
-.rx-ind-green-bg {background:$rx-ind-green;}
-.rx-ind-green-br {@extend .rx-br; border-color:$rx-ind-green;}
-
-.rx-ind-blue,
-i.fa-question-circle {color:$rx-ind-blue;}
-.rx-ind-blue-bg {background:$rx-ind-blue;}
-.rx-ind-blue-br {@extend .rx-br; border-color:$rx-ind-blue;}
 
 }}
 
@@ -129,7 +171,7 @@ body, h1, h2, h3, h4, h5, h6 {
     width: 100%;
     position: fixed;
     top: 0;
-    background: #2a3e87;
+    background: $rx-blue;
     color: $rx-white;
     .title-area {
         padding-left: 50px;
@@ -172,16 +214,16 @@ body, h1, h2, h3, h4, h5, h6 {
   height:45px;
 }
 
-.top-bar .toggle-topbar a:hover {
-    color: #2b2f3e;
-    -o-transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    -khtml-transition: color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out;
-    -ms-transition: color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out;
-    height:45px;
-}
+// .top-bar .toggle-topbar a:hover {
+//     color: #2b2f3e;
+//     -o-transition: color 0.2s ease-in-out;
+//     -moz-transition: color 0.2s ease-in-out;
+//     -khtml-transition: color 0.2s ease-in-out;
+//     -webkit-transition: color 0.2s ease-in-out;
+//     -ms-transition: color 0.2s ease-in-out;
+//     transition: color 0.2s ease-in-out;
+//     height:45px;
+// }
 
 .content-container {
     position: relative;
@@ -204,16 +246,16 @@ body, h1, h2, h3, h4, h5, h6 {
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 0.1rem;
-            color:#333;
+            color:$rx-textGrey;
             img {
                 margin-bottom: 11px;
-                border: 1px solid #333;
+                border: 1px solid $rx-textGrey;
                 padding: 10px 15px;
             }
         }
     }
     ul.off-canvas-list li a {
-        color: #333;
+        color: $rx-textGrey;
         text-transform: uppercase;
         font-size: 0.85rem;
         height: 100%;
@@ -396,17 +438,22 @@ section.panel {
     margin-top: 75px;
     padding: 10px 0 0 0;
     background:$rx-grey;
+    color: $rx-textGrey;
+    border-color:$rx-brGrey;
     .panel {
       background: $rx-white;
       border-left:none;
       border-right:none;
       border-bottom:none;
       min-height: 150px;
+      color: $rx-textGrey;
+      border-color:$rx-brGrey;
     }
     h1,h2,h3,h4,h5,h6 {
-      color: #85868d;
+      color: $rx-textGrey;
       font-weight:300;
     }
+    p {color: $rx-textGrey;}
     .hash-title {
         text-transform: uppercase;
         font-size: 2rem;
@@ -424,11 +471,12 @@ section.panel {
         color: #008cba;
     }
     .subsection {
-      margin-top:20px;
+      margin-top:60px;
     } 
     span.code {
       font-family: Consolas, "Liberation Mono", Courier, monospace;
-      color: #333;
+      color: $rx-textGrey;
+
     }
 
     .color-definition {
@@ -437,7 +485,7 @@ section.panel {
       -moz-border-radius:3px;
       margin-bottom:25px;
       .color-top {
-        height:100px;
+        height:70px;
       }
 
       .color-top {
@@ -464,6 +512,8 @@ section.panel {
           border:none;
           background:none;
           background-color:none;
+          color:$rx-textGrey;
+          padding:0;
         }
       }
     }
