@@ -13,29 +13,29 @@
   
   // indicator 
     $rx-ind-red: #d95553;
-   $rx-ind-red2: lighten($rx-ind-red,15%);
-   $rx-ind-red3: darken($rx-ind-red,15%);
+   $rx-ind-red2: #e79392;
+   $rx-ind-red3: #b72b28;
 
  $rx-ind-yellow: #efad58;
-$rx-ind-yellow2: lighten($rx-ind-yellow,15%);
-$rx-ind-yellow3: darken($rx-ind-yellow,15%);
+$rx-ind-yellow2: #f6cf9e;
+$rx-ind-yellow3: #e58a16;
 
   $rx-ind-green: #007b34;
- $rx-ind-green2: #E7F8EE;
- $rx-ind-green3: darken($rx-ind-green,5%);
+ $rx-ind-green2: #c7efd8;
+ $rx-ind-green3: #006229;
 
    $rx-ind-blue: #066cb6;
-  $rx-ind-blue2: lighten($rx-ind-blue,45%);
-  $rx-ind-blue3: darken($rx-ind-blue,10%);
+  $rx-ind-blue2: #d2ebfe;
+  $rx-ind-blue3: #044f85;
 
   // rexel
-      $rx-blue: #2a3e87;
-     $rx-blue2: #4487bd;
-    $rx-orange: #ee7803;
+       $rx-blue: #2a3e87;
+      $rx-blue2: #4487bd;
+     $rx-orange: #ee7803;
 
   // hagemeyer
-    $rx-hgBlue: #0F6AB3;
-  $rx-hgOrange: #E86D12;
+     $rx-hgBlue: #0F6AB3;
+   $rx-hgOrange: #E86D12;
 
 
 // for specificity
@@ -553,7 +553,6 @@ section.panel {
     }
 
     .color-definition {
-
       .color-top {
         height:70px;
         @extend .rx-br-rad-top;
@@ -561,9 +560,10 @@ section.panel {
 
       .color-info {
         background:$rx-grey;
+        @extend .rx-br-rad-bottom;
         padding:10px;
         font-size:0.80em;
-        //@extend .rx-br-rad-bottom;
+
 
         code {
           @extend .rx-br-omit;
@@ -575,8 +575,8 @@ section.panel {
       }
       .secondColor, .tertColor {
           width:50%;
-          height:30px;
           code {
+            padding:10px;
             font-size:0.80em;
             color:$rx-white;
             background:none;
@@ -586,7 +586,12 @@ section.panel {
         .secondColor {
           code{
             color:$rx-textGrey;
+            
           }
+          @extend .rx-br-rad-bottomLeft;
+        }
+        .tertColor {
+          @extend .rx-br-rad-bottomRight;
         }
     }
     
