@@ -3,53 +3,118 @@
 
 
 
-//live usage
+// live usage
   
-  //global
-      $rx-grey: #f5f5f5;
-    $rx-brGrey: #dadada;
-  $rx-textGrey: #58585a;
-     $rx-white: #ffffff;
+  // global
+       $rx-grey: #f5f5f5;
+     $rx-brGrey: #dadada;
+   $rx-textGrey: #58585a;
+      $rx-white: #ffffff;
   
-  //indicator 
-   $rx-ind-red: #d95553;
-$rx-ind-yellow: #efad58;
- $rx-ind-green: #007b34;
-  $rx-ind-blue: #066cb6;
+  // indicator 
+    $rx-ind-red: #d95553;
+   $rx-ind-red2: lighten($rx-ind-red,15%);
+   $rx-ind-red3: darken($rx-ind-red,15%);
 
-  //rexel
+ $rx-ind-yellow: #efad58;
+$rx-ind-yellow2: lighten($rx-ind-yellow,15%);
+$rx-ind-yellow3: darken($rx-ind-yellow,15%);
+
+  $rx-ind-green: #007b34;
+ $rx-ind-green2: #E7F8EE;
+ $rx-ind-green3: darken($rx-ind-green,5%);
+
+   $rx-ind-blue: #066cb6;
+  $rx-ind-blue2: lighten($rx-ind-blue,45%);
+  $rx-ind-blue3: darken($rx-ind-blue,10%);
+
+  // rexel
       $rx-blue: #2a3e87;
      $rx-blue2: #4487bd;
     $rx-orange: #ee7803;
 
-  //hagemeyer
+  // hagemeyer
     $rx-hgBlue: #0F6AB3;
   $rx-hgOrange: #E86D12;
 
 
-//for specificity
+// for specificity
 body{.panel{
 
-  //borders
-    //base global border style
+  // borders
+    // base global border style
     .rx-br {border: 1px solid $rx-brGrey;}
 
-    //border omission
+    // border omission
 
-      //omit all 4 sides
+      // omit all 4 sides
       .rx-br-omit {@extend .rx-br; border-width:0;}
 
-      //omit sides individually
-      .rx-br-top-omit {@extend .rx-br; border-top:0;}
-      .rx-br-right-omit {@extend .rx-br; border-right:0;}
-      .rx-br-bottom-omit {@extend .rx-br; border-bottom:0;}
-      .rx-br-left-omit {@extend .rx-br; border-left:0;}
+      // omit sides individually
+      .rx-br-top-omit {@extend .rx-br; border-top-width:0;}
+      .rx-br-right-omit {@extend .rx-br; border-right-width:0;}
+      .rx-br-bottom-omit {@extend .rx-br; border-bottom-width:0;}
+      .rx-br-left-omit {@extend .rx-br; border-left-width:0;}
     
-    //one sided border only
+    // one sided border only
     .rx-br-top {@extend .rx-br-omit; border-top-width:1px;}
     .rx-br-right {@extend .rx-br-omit; border-right-width:1px;}
     .rx-br-bottom {@extend .rx-br-omit; border-bottom-width:1px;}
     .rx-br-left {@extend .rx-br-omit; border-left-width:1px;}
+
+
+    //border radius
+      // all sides mixin
+      @mixin rx-br-rad-mix($topLeft:true, $topRight:true, $bottomRight:true, $bottomLeft:true) {
+        $rad:3px;
+        @if $topLeft {
+          -moz-border-radius-topleft:$rad; 
+          -webkit-border-top-left-radius:$rad;
+          border-top-left-radius: $rad;
+        }
+        @if $topRight {
+          -moz-border-radius-topright:$rad; 
+          -webkit-border-top-right-radius:$rad;
+          border-top-right-radius: $rad;
+        }
+        @if $bottomRight {
+          -moz-border-radius-bottomright:$rad; 
+          -webkit-border-bottom-right-radius:$rad;
+          border-bottom-right-radius: $rad;
+        }
+        @if $bottomLeft {
+          -moz-border-radius-bottomleft:$rad; 
+          -webkit-border-bottom-left-radius:$rad;
+          border-bottom-left-radius: $rad;
+        }
+        background-clip: padding-box;
+      }
+
+      // border radius all corners
+      .rx-br-rad {@include rx-br-rad-mix(true, true, true, true);}
+
+      // border radius omission
+        // border radius omit all corners
+        .rx-br-rad-omit {@include rx-br-rad-mix(false, false, false, false);}
+        // border raidus omit specific corners
+        .rx-br-rad-topLeft-omit {@include rx-br-rad-mix(false, true, true, true);}
+        .rx-br-rad-topRight-omit {@include rx-br-rad-mix(true, false, true, true);}
+        .rx-br-rad-bottomRight-omit {@include rx-br-rad-mix(true, true, false, true);}
+        .rx-br-rad-bottomLeft-omit {@include rx-br-rad-mix(true, true, true, false);}
+
+      
+      // border radius include both corners on specific side
+      .rx-br-rad-top {@include rx-br-rad-mix(true, true, false, false);}
+      .rx-br-rad-right {@include rx-br-rad-mix(false, true, true, false);}
+      .rx-br-rad-bottom {@include rx-br-rad-mix(false, false, true, true);}
+      .rx-br-rad-left {@include rx-br-rad-mix(true, false, false, true);}
+      
+      // border radius on specific corners
+      .rx-br-rad-topLeft {@include rx-br-rad-mix(rue, false, false, false);}
+      .rx-br-rad-topRight {@include rx-br-rad-mix(false, true, false, false);}
+      .rx-br-rad-bottomRight {@include rx-br-rad-mix(false, false, true, false);}
+      .rx-br-rad-bottomLeft {@include rx-br-rad-mix(false, false, false, true);}
+
   
 
   //colors
@@ -71,22 +136,58 @@ body{.panel{
       .rx-textGrey-bg {background:$rx-textGrey;}
       .rx-textGrey-br {@extend .rx-br; border-color:$rx-textGrey;}
       
-      //indicator colors
-      .rx-ind-red,.rx-err-text,i.fa-times {color:$rx-ind-red;}
-      .rx-ind-red-bg {background:$rx-ind-red;}
-      .rx-ind-red-br {@extend .rx-br; border-color:$rx-ind-red;}
+      // indicator colors
+        // indicator red
+        .rx-ind-red,.rx-err-text,i.fa-times {color:$rx-ind-red;}
+        .rx-ind-red-bg {background:$rx-ind-red;}
+        .rx-ind-red-br {@extend .rx-br; border-color:$rx-ind-red;}
+    
+        .rx-ind-red2 {color:$rx-ind-red2;}
+        .rx-ind-red2-bg {background:$rx-ind-red2;}
+        .rx-ind-red2-br {@extend .rx-br; border-color:$rx-ind-red2;}
 
-      .rx-ind-yellow,i.fa-exclamation {color:$rx-ind-yellow;}
-      .rx-ind-yellow-bg {background:$rx-ind-yellow;}
-      .rx-ind-yellow-br {@extend .rx-br; border-color:$rx-ind-yellow;}
+        .rx-ind-red3 {color:$rx-ind-red3;}
+        .rx-ind-red3-bg {background:$rx-ind-red3;}
+        .rx-ind-red3-br {@extend .rx-br; border-color:$rx-ind-red3;}
+      
+        // indicator yellow
+        .rx-ind-yellow,i.fa-exclamation {color:$rx-ind-yellow;}
+        .rx-ind-yellow-bg {background:$rx-ind-yellow;}
+        .rx-ind-yellow-br {@extend .rx-br; border-color:$rx-ind-yellow;}
 
-      .rx-ind-green,i.fa-check {color:$rx-ind-green;}
-      .rx-ind-green-bg {background:$rx-ind-green;}
-      .rx-ind-green-br {@extend .rx-br; border-color:$rx-ind-green;}
+        .rx-ind-yellow2 {color:$rx-ind-yellow2;}
+        .rx-ind-yellow2-bg {background:$rx-ind-yellow2;}
+        .rx-ind-yellow2-br {@extend .rx-br; border-color:$rx-ind-yellow2;}
 
-      .rx-ind-blue,i.fa-question-circle {color:$rx-ind-blue;}
-      .rx-ind-blue-bg {background:$rx-ind-blue;}
-      .rx-ind-blue-br {@extend .rx-br; border-color:$rx-ind-blue;}
+        .rx-ind-yellow3 {color:$rx-ind-yellow3;}
+        .rx-ind-yellow3-bg {background:$rx-ind-yellow3;}
+        .rx-ind-yellow3-br {@extend .rx-br; border-color:$rx-ind-yellow3;}
+      
+        // indicator green
+        .rx-ind-green,i.fa-check {color:$rx-ind-green;}
+        .rx-ind-green-bg {background:$rx-ind-green;}
+        .rx-ind-green-br {@extend .rx-br; border-color:$rx-ind-green;}
+
+        .rx-ind-green2 {color:$rx-ind-green2;}
+        .rx-ind-green2-bg {background:$rx-ind-green2;}
+        .rx-ind-green2-br {@extend .rx-br; border-color:$rx-ind-green2;}
+
+        .rx-ind-green3 {color:$rx-ind-green3;}
+        .rx-ind-green3-bg {background:$rx-ind-green3;}
+        .rx-ind-green3-br {@extend .rx-br; border-color:$rx-ind-green3;}
+      
+        // indicator blue
+        .rx-ind-blue {color:$rx-ind-blue;}
+        .rx-ind-blue-bg {background:$rx-ind-blue;}
+        .rx-ind-blue-br {@extend .rx-br; border-color:$rx-ind-blue;}
+
+        .rx-ind-blue2 {color:$rx-ind-blue2;}
+        .rx-ind-blue2-bg {background:$rx-ind-blue2;}
+        .rx-ind-blue2-br {@extend .rx-br; border-color:$rx-ind-blue2;}
+
+        .rx-ind-blue3 {color:$rx-ind-blue3;}
+        .rx-ind-blue3-bg {background:$rx-ind-blue3;}
+        .rx-ind-blue3-br {@extend .rx-br; border-color:$rx-ind-blue3;}
       
       //Rexel Color Pallete
       .rx-blue {color:$rx-blue;}
@@ -119,26 +220,12 @@ body{.panel{
         #{$attribute}: $color;
       }
 
-
-
       //text colors
-      .rx-placeholder-text {@include rx-alpha-attribute('color', rgba($rx-textGrey, 0.75), white);}
-      .rx-disabled-text {@include rx-alpha-attribute('color', rgba($rx-textGrey, 0.50), white);}
-      //overlay
-       
-
-
+      .rx-textGrey-75 {@include rx-alpha-attribute('color', rgba($rx-textGrey, 0.75), white);}
+      .rx-textGrey-50 {@include rx-alpha-attribute('color', rgba($rx-textGrey, 0.50), white);}       
 
 }}
 
-
-
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: $rx-grey;
-    padding: 0.2em 0;
-}
 
 body {
     background: $rx-white;
@@ -171,7 +258,7 @@ body, h1, h2, h3, h4, h5, h6 {
     width: 100%;
     position: fixed;
     top: 0;
-    background: $rx-blue;
+    background: $rx-hgBlue;
     color: $rx-white;
     .title-area {
         padding-left: 50px;
@@ -199,31 +286,13 @@ body, h1, h2, h3, h4, h5, h6 {
     color: $rx-white;
 }
 
-.top-bar .toggle-topbar.menu-icon a span, .top-bar .toggle-topbar a {
-    color: $rx-blue2;
-    font-size: 2rem;
-    -o-transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    -khtml-transition: color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out;
-    -ms-transition: color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out;
-}
+
 
 .top-bar.expanded {
   height:45px;
 }
 
-// .top-bar .toggle-topbar a:hover {
-//     color: #2b2f3e;
-//     -o-transition: color 0.2s ease-in-out;
-//     -moz-transition: color 0.2s ease-in-out;
-//     -khtml-transition: color 0.2s ease-in-out;
-//     -webkit-transition: color 0.2s ease-in-out;
-//     -ms-transition: color 0.2s ease-in-out;
-//     transition: color 0.2s ease-in-out;
-//     height:45px;
-// }
+
 
 .content-container {
     position: relative;
@@ -275,7 +344,7 @@ body, h1, h2, h3, h4, h5, h6 {
     ul.off-canvas-list li a.sub-level {
         font-size: 0.65rem;
         padding-left: 45px;
-        border-left: 0px solid $rx-blue2;
+        border-left: 0px solid $rx-hgBlue;
         transition: all 0.2s;
         -moz-transition: all 0.2s;
         -webkit-transition: all 0.2s;
@@ -283,7 +352,7 @@ body, h1, h2, h3, h4, h5, h6 {
         border: none;
     }
     ul.off-canvas-list li a:hover, ul.off-canvas-list li a.active {
-        background: $rx-blue2;
+        background: $rx-hgBlue;
         transition: all 0.2s;
         -moz-transition: all 0.2s;
         -webkit-transition: all 0.2s;
@@ -291,7 +360,7 @@ body, h1, h2, h3, h4, h5, h6 {
         color: $rx-white;
     }
     ul.off-canvas-list li a.sub-level:hover, ul.off-canvas-list li a.sub-level.active {
-        border-left: 5px solid $rx-blue2;
+        border-left: 5px solid $rx-hgBlue;
         background: $rx-grey;
         color:$rx-textGrey;
     }
@@ -377,7 +446,7 @@ body, h1, h2, h3, h4, h5, h6 {
 .hamburger li {
     width: 24px;
     height: 4px;
-    background: #4487bd;
+    background: $rx-white;
     margin: 2px 0 0;
     padding: 0;
     -moz-transform: translate3rd(0, 0, 0);
@@ -468,7 +537,7 @@ section.panel {
         cursor: pointer;
     }
     .hash-title:hover {
-        color: #008cba;
+        color: $rx-hgBlue;
     }
     .subsection {
       margin-top:60px;
@@ -479,43 +548,46 @@ section.panel {
 
     }
 
+    .snippet-example {
+      padding:10px;
+    }
+
     .color-definition {
-      border-radius:3px;
-      -webkit-border-radius:3px;
-      -moz-border-radius:3px;
-      margin-bottom:25px;
+
       .color-top {
         height:70px;
+        @extend .rx-br-rad-top;
       }
 
-      .color-top {
-        -webkit-border-top-left-radius: 3px;
-        -webkit-border-top-right-radius: 3px;
-        -moz-border-radius-topleft: 3px;
-        -moz-border-radius-topright: 3px;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
-      }
       .color-info {
         background:$rx-grey;
-        //color:#85868d;
         padding:10px;
         font-size:0.80em;
-        -webkit-border-bottom-right-radius: 3px;
-        -webkit-border-bottom-left-radius: 3px;
-        -moz-border-radius-bottomright: 3px;
-        -moz-border-radius-bottomleft: 3px;
-        border-bottom-right-radius: 3px;
-        border-bottom-left-radius: 3px;
+        //@extend .rx-br-rad-bottom;
 
         code {
-          border:none;
+          @extend .rx-br-omit;
           background:none;
           background-color:none;
           color:$rx-textGrey;
           padding:0;
         }
       }
+      .secondColor, .tertColor {
+          width:50%;
+          height:30px;
+          code {
+            font-size:0.80em;
+            color:$rx-white;
+            background:none;
+            @extend .rx-br-omit;
+          }
+        }
+        .secondColor {
+          code{
+            color:$rx-textGrey;
+          }
+        }
     }
     
     p i {position:relative; top:2px;}
@@ -546,7 +618,7 @@ footer {
         left: 0px !important;
     }
     .row {
-      margin-left:50px;
+      //margin-left:50px;
     }
 }
 
