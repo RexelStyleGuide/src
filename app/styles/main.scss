@@ -225,12 +225,12 @@ body{.panel{
       .rx-textGrey-50 {@include rx-alpha-attribute('color', rgba($rx-textGrey, 0.50), white);}       
 
       // gradient colors
-      .rx-white-gradient {
-        background-color: #ffffff;
-          @include filter-gradient(#ffffff, #efefef, vertical);
-          $experimental-support-for-svg: true;
-          @include background-image(linear-gradient(top, #ffffff 0%,#efefef 100%));
-        }
+      // .rx-white-gradient {
+      //   background-color: #ffffff;
+      //     @include filter-gradient(#ffffff, #efefef, vertical);
+      //     $experimental-support-for-svg: true;
+      //     @include background-image(linear-gradient(top, #ffffff 0%,#efefef 100%));
+      //   }
 
 }}
 
