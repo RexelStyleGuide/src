@@ -37,9 +37,12 @@ $rx-ind-yellow3: #e58a16;
      $rx-hgBlue: #0F6AB3;
    $rx-hgOrange: #E86D12;
 
+   // just in case
+      $rx-black: #000000;
+
 
 // for specificity
-body{.panel{
+body{
 
   // borders
     // base global border style
@@ -177,7 +180,7 @@ body{.panel{
         .rx-ind-green3-br {@extend .rx-br; border-color:$rx-ind-green3;}
       
         // indicator blue
-        .rx-ind-blue {color:$rx-ind-blue;}
+        .rx-ind-blue,i.fa-question-circle {color:$rx-ind-blue;}
         .rx-ind-blue-bg {background:$rx-ind-blue;}
         .rx-ind-blue-br {@extend .rx-br; border-color:$rx-ind-blue;}
 
@@ -212,7 +215,7 @@ body{.panel{
       .rx-hgOrange-br {@extend .rx-br; border-color:$rx-hgOrange;}
 
       // semi-opaque colors
-      @mixin rx-alpha-attribute($attribute, $color, $background) {
+      @mixin rx-alpha-attribute-mix($attribute, $color, $background) {
         $percent: alpha($color) * 100%;
         $opaque: opacify($color, 1);
         $solid-color: mix($opaque, $background, $percent);
@@ -221,22 +224,112 @@ body{.panel{
       }
 
       // text colors
-      .rx-textGrey-75 {@include rx-alpha-attribute('color', rgba($rx-textGrey, 0.75), white);}
-      .rx-textGrey-50 {@include rx-alpha-attribute('color', rgba($rx-textGrey, 0.50), white);}       
+      .rx-textGrey-75 {@include rx-alpha-attribute-mix('color', rgba($rx-textGrey, 0.75), white);}
+      .rx-textGrey-50 {@include rx-alpha-attribute-mix('color', rgba($rx-textGrey, 0.50), white);}
+
+      .rx-disabled-text {@extend .rx-textGrey-50;}
+      .rx-placeholder-text {@extend .rx-textGrey-75;}  
+
+      // overlay color
+      @mixin rx-opacity($opacity) {
+        opacity: $opacity;
+        $opacity-ie: $opacity * 100;
+        filter: alpha(opacity=$opacity-ie); //IE8
+      }
+
+      .rx-overlay-black {
+        background:$rx-black;
+        @include rx-opacity(0.7);
+      }     
 
       // gradient colors
-      // .rx-white-gradient {
-      //   background-color: #ffffff;
-      //     @include filter-gradient(#ffffff, #efefef, vertical);
-      //     $experimental-support-for-svg: true;
-      //     @include background-image(linear-gradient(top, #ffffff 0%,#efefef 100%));
-      //   }
+        // below is standard compass for gradients 
+        // **see http://sassmeister.com/gist/b58f6e2cc3160007c880
+      @function convert-angle($value, $unit) {
+        $convertable-units: deg grad turn rad;
+        $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
+        @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+          @return $value
+            / nth($conversion-factors, index($convertable-units, unit($value)))
+            * nth($conversion-factors, index($convertable-units, $unit));
+          }
+          @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
+        }
 
-}}
+        /// Test if `$value` is an angle
+        /// @param {*} $value - Value to test
+        /// @return {Bool}
+        @function is-direction($value) {
+          $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+          $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+          @return $is-direction or $is-angle;
+        }
+
+        /// Convert a direction to legacy syntax
+        /// @param {Keyword | Angle} $value - Value to convert
+        /// @require {function} is-direction
+        /// @require {function} convert-angle
+        @function legacy-direction($value) {
+          @if is-direction($value) == false {
+            @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
+          }
+  
+          $conversion-map: ( 
+            to top          : bottom,
+            to top right    : bottom left,
+            to right top    : left bottom,
+            to right        : left,
+            to bottom right : top left,
+            to right bottom : left top,
+            to bottom       : top,
+            to bottom left  : top right,
+            to left bottom  : right top,
+            to left         : right,
+            to left top     : right bottom,
+            to top left     : bottom right
+          );
+    
+          @if map-has-key($conversion-map, $value) {@return map-get($conversion-map, $value);}
+          @return 90deg - convert-angle($value, 'deg');
+        }
+
+        /// Mixin printing a linear-gradient 
+        /// as well as a plain color fallback 
+        /// and the `-webkit-` prefixed declaration
+        /// @access public
+        /// @param {String | List | Angle} $direction - Linear gradient direction
+        /// @param {Arglist} $color-stops - List of color-stops composing the gradient
+        @mixin rx-linear-gradient-mix($direction, $color-stops...) {
+          @if is-direction($direction) == false {
+            $color-stops: ($direction, $color-stops);
+            $direction: 180deg;
+          }
+  
+          background: nth(nth($color-stops, 1), 1);
+          background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+          background: linear-gradient($direction, $color-stops);
+        }
+      .rx-white-gradient {@include rx-linear-gradient-mix($rx-white, $rx-grey);}
+
+      // visiblility
+        .rx-hide {display:none;}
+
+}
 
 
 body {
     background: $rx-white;
+
+    .reveal-modal-bg {
+      @extend .rx-overlay-black;
+      cursor:pointer;
+    }
+
+    a {
+      color:$rx-hgBlue;
+    }
+
+
     *:focus {
         outline: 0;
     }
@@ -560,9 +653,12 @@ section.panel {
       padding:10px;
     }
 
+    .snippet-example-small {padding:3px 5px;}
+
     .color-definition {
       .color-top {
         height:70px;
+        padding:10px;
         @extend .rx-br-rad-top;
       }
 
@@ -603,7 +699,7 @@ section.panel {
         }
     }
     
-    p i {position:relative; top:2px;}
+    .fa-chevron-right {position:relative; top:2px;}
     
 }
 
@@ -627,24 +723,14 @@ footer {
 }
 
 @media only screen and (min-width: 64.063em) {
-    i.ion-android-search {
-        left: 0px !important;
-    }
     .row {
-      //margin-left:50px;
+      margin-left:50px;
     }
 }
 
-@media only screen and (min-width: 40.063em) {
-    .inner-wrap.sidenav-open {
-        // width: -moz-calc(100% - 250px);
-        // width: -webkit-calc(100% - 250px);
-        // width: calc(100% - 250px);
-        // -webkit-transition: all 500ms ease;
-        // -moz-transition: all 500ms ease;
-        // -ms-transition: all 500ms ease;
-        // -o-transition: all 500ms ease;
-        // transition: all 500ms ease;
+@media only screen and (max-width: 64.063em) {
+  .color-definition {
+      margin-bottom:50px;
     }
 }
 
@@ -720,6 +806,11 @@ footer {
     .result-link:hover {
       background:$rx-grey;
     }
+}
+
+#rx-overlay-example {
+  padding:0;
+  border:none;
 }
 
 

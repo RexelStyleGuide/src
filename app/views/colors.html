@@ -4,13 +4,21 @@
 		<h3 class="subsection">Usage</h3>
 		<p>
 
-		There are several HTML and default Rexel elements that will automatically have colors applied (e.g; buttons, links, text, inputs, etc.). If an element does not have a default style, this section can be used to find the acceptable class or color hex-value.<br><br>
+		There are several HTML and default Rexel elements that will automatically have colors applied (e.g; buttons, links, text, inputs, etc.). If an element does not have a default style, this section can be used to find the acceptable class or color hex-value.
 
-		For <strong>TEXT</strong>, add a class of <code>rx-</code> followed by the color name. For example; <code>.rx-orange</code> will output <span class="rx-orange">Rexel Orange</span>.<br>
+		<table>
+			<tr>
+				<td>For <strong>TEXT</strong>, add a class of <code>rx-</code> followed by the color name. For example; <code>.rx-orange</code> will output <span class="rx-orange snippet-example-small">Rexel Orange</span>.</td>
+			</tr>
+			<tr>
+				<td>For <strong>BACKGROUND COLOR</strong>, append the class with <code>-bg</code>. For example; <code>.rx-orange-bg</code> will output <span class="rx-orange-bg snippet-example-small">Rexel Orange</span>.</td>
+			</tr>
+			<tr>
+				<td>For <strong>BORDER COLOR</strong>, append the class with <code>-br</code>. For example; <code>.rx-orange-br</code> will output <span class="rx-orange-br snippet-example-small">Rexel Orange</span>.</td>
+			</tr>
+		</table>
 
-		For <strong>BACKGROUND COLOR</strong>, append the class with <code>-bg</code>. For example; <code>.rx-orange-bg</code> will output <span class="rx-orange-bg">Rexel Orange</span>.<br>
-
-		For <strong>BORDER COLOR</strong>, append the class with <code>-br</code>. For example; <code>.rx-orange-br</code> will output <span class="rx-orange-br">Rexel Orange</span>. <br><a du-scrollspy du-smooth-scroll href="#">See More About Borders <i class="fa fa-chevron-right"></i></a><br>
+		<a du-scrollspy du-smooth-scroll href="#">See More About Borders <i class="fa fa-chevron-right"></i></a><br></p>
 
 		<h3 class="subsection">Using color classes together</h3>
 		You can use these color classes together by adding multiple classes in succession. For example; 
@@ -42,7 +50,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#ffffff</code><br>
-						<code class="right">$rx-white</code>
+						<code class="right rx-hide">$rx-white</code>
 					</span>
 					<strong>Rexel White</strong><br>
 					<code>.rx-white</code><br>
@@ -56,7 +64,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#dadada</code><br>
-						<code class="right">$rx-grey</code>
+						<code class="right rx-hide">$rx-grey</code>
 					</span>
 					<strong>Rexel Grey</strong><br>
 					<code>.rx-grey</code><br>
@@ -71,7 +79,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#f5f5f5</code><br>
-						<code class="right">$rx-brGrey</code>
+						<code class="right rx-hide">$rx-brGrey</code>
 					</span>
 					<strong>Rexel Border Grey</strong><br>
 					<code>.rx-brGrey</code><br>
@@ -87,7 +95,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#58585a</code><br>
-						<code class="right">$rx-textGrey</code>
+						<code class="right rx-hide">$rx-textGrey</code>
 					</span>
 					<strong>Rexel Text Grey</strong><br>
 					<code>.rx-textGrey</code><br>
@@ -108,7 +116,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#d95553</code><br>
-						<code class="right">$rx-ind-red</code>
+						<code class="right rx-hide">$rx-ind-red</code>
 					</span>
 					<strong>Indicator Red</strong><br>
 					<code>.rx-ind-red</code><br>
@@ -128,7 +136,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#efad58</code><br>
-						<code class="right">$rx-ind-yellow</code>
+						<code class="right rx-hide">$rx-ind-yellow</code>
 					</span>
 					<strong>Indicator Yellow</strong><br>
 					<code>.rx-ind-yellow</code><br>
@@ -144,7 +152,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#007b34</code><br>
-						<code class="right">$rx-ind-green</code>
+						<code class="right rx-hide">$rx-ind-green</code>
 					</span>
 					<strong>Indicator Green</strong><br>
 					<code>.rx-ind-green</code><br>
@@ -160,7 +168,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#066cb6</code><br>
-						<code class="right">$rx-ind-blue</code>
+						<code class="right rx-hide">$rx-ind-blue</code>
 					</span>
 					<strong>Indicator Blue</strong><br>
 					<code>.rx-ind-blue</code><br>
@@ -172,61 +180,63 @@
 			</div>
 
 			<div class="large-12 columns">
-			<h3 class="subsection">Global Gradient Colors</h3>
+			<h3 class="subsection">Global Colors - Other</h3>
 			</div>
 
 			<div class="color-definition large-3 columns">
-				<div class="color-top rx-white-gradient"> </div>
+				<div class="color-top rx-white-gradient rx-br"> </div>
 				<div class="color-info">
 					<span class="right">
 						<code class="right"> </code><br>
-						<code class="right"> </code>
+						<code class="right rx-hide"> </code>
 					</span>			
-					<strong> </strong><br>
-					<code> </code><br>
-					<code> </code><br>
+					<strong>Rexel White Gradient</strong><br>
+					<span>from <code>#ffffff</code> (top) to <code>#dadada</code> (bottom)</span>
+					<span><code>.rx-white-gradient</code> (background only)</span><br>
 					<code> </code><br>
 				</div>
 			</div>
 
 			<div class="color-definition large-3 columns">
-				<div class="color-top rx-grey-bg"> </div>
+				<div class="color-top rx-white-bg rx-br rx-disabled-text">Lorem ipsum dolor sit amet, vim delenit eleifend.</div>
 				<div class="color-info">
 					<span class="right">
 						<code class="right"> </code><br>
 						<code class="right"> </code>
 					</span>			
-					<strong> </strong><br>
-					<code> </code><br>
-					<code> </code><br>
+					<strong>Rexel Disabled Text</strong><br>
+					<span><code>#58585a</code> @ 50% opacity</span><br>
+					<span><code>.rx-disabled-text</code> (text only)</span><br>
 					<code> </code><br>
 				</div>
 			</div>
 
 			<div class="color-definition large-3 columns">
-				<div class="color-top rx-grey-bg"> </div>
+				<div class="color-top rx-white-bg rx-br rx-placeholder-text">Lorem ipsum dolor sit amet, vim delenit eleifend.</div>
 				<div class="color-info">
 					<span class="right">
 						<code class="right"> </code><br>
 						<code class="right"> </code>
 					</span>			
-					<strong> </strong><br>
-					<code> </code><br>
-					<code> </code><br>
+					<strong>Rexel Placeholder Text</strong><br>
+					<span><code>#58585a</code> @ 75% opacity</span><br>
+					<span><code>.rx-placeholder-text</code> (text only)</span><br>
 					<code> </code><br>
 				</div>
 			</div>
 
 			<div class="color-definition large-3 columns">
-				<div class="color-top rx-grey-bg"> </div>
+				<div class="color-top rx-white-bg rx-br">
+				<a href="#" data-reveal-id="rx-overlay-example">Click Me For An Overlay!</a>
+				</div>
 				<div class="color-info">
 					<span class="right">
 						<code class="right"> </code><br>
 						<code class="right"> </code>
 					</span>			
-					<strong> </strong><br>
-					<code> </code><br>
-					<code> </code><br>
+					<strong>Rexel Overlay Black</strong><br>
+					<span><code>#000000</code> @ 70% opacity</span><br>
+					<span><code>.rx-overlay-black</code> (background-only)</span><br>
 					<code> </code><br>
 				</div>
 			</div>
@@ -241,7 +251,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#2a3e87</code><br>
-						<code class="right">$rx-blue</code>
+						<code class="right rx-hide">$rx-blue</code>
 					</span>
 					<strong>Rexel Blue</strong><br>
 					<code>.rx-blue</code><br>
@@ -256,7 +266,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#4487bd</code><br>
-						<code class="right">$rx-blue2</code>
+						<code class="right rx-hide">$rx-blue2</code>
 					</span>
 					<strong>Rexel Secondary Blue</strong><br>
 					<code>.rx-blue2</code><br>
@@ -271,7 +281,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#ee7803</code><br>
-						<code class="right">$rx-orange</code>
+						<code class="right rx-hide">$rx-orange</code>
 					</span>
 					<strong>Rexel Orange</strong><br>
 					<code>.rx-orange</code><br>
@@ -292,7 +302,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#0F6AB3</code><br>
-						<code class="right">$rx-hgBlue</code>
+						<code class="right rx-hide">$rx-hgBlue</code>
 					</span>	
 					<strong>Hagemeyer Blue</strong><br>
 					<code>.rx-hgBlue</code><br>
@@ -306,7 +316,7 @@
 				<div class="color-info">
 					<span class="right">
 						<code class="right">#E86D12</code><br>
-						<code class="right">$rx-hgOrange</code>
+						<code class="right rx-hide">$rx-hgOrange</code>
 					</span>			
 					<strong>Hagemeyer Orange</strong><br>
 					<code>.rx-hgOrange</code><br>
@@ -321,15 +331,8 @@
 		</div>
 			<br><br><br><br>
 			<strong>To Do:</strong><br>
-			Input gradient, Find any other gradients <br>
 			Explain what uses each color <br>
-			how to structure indicator shades <br>
-			spacing under colors on mobile <br>
 			copy <br>
-			show sass vars? <br>
-			usage in table? <br>
-			border rad on bottom of colors <br>
-			link colors <br>
 
 		</div>
 </div>
