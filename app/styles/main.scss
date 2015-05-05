@@ -679,6 +679,7 @@ section.panel {
       }
       .secondColor, .tertColor {
           width:50%;
+          padding:5px;
           code {
             padding:10px;
             font-size:0.80em;
@@ -744,67 +745,36 @@ footer {
 
     .result-link {
       display:flex;
-      color:#008cba;
+      color:$rx-textGrey;
       border-bottom:1px solid #d3d3db;
-      -o-transition: all 0.1s ease-in-out;
-        -moz-transition: all 0.1s ease-in-out;
-        -khtml-transition: all 0.1s ease-in-out;
-        -webkit-transition: all 0.1s ease-in-out;
-        -ms-transition: all 0.1s ease-in-out;
-        transition: all 0.1s ease-in-out;
-
-        .dd-left {
-            display: inline-table;
-            position:relative;
-            top:50%;
-            float: left;
-            vertical-align: middle;
-            font-weight: 200;
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
-            line-height: 50px;
-            background: #4487bd;
-            color: $rx-white;
-            margin: 5px;
-            margin-top:10px;
-            margin-left:10px;
-            text-align: center;
-            border-radius: 50%;
-            vertical-align:middle;
-            -webkit-transition: -webkit-transform .2s ease-in-out;
-            transition: transform .2s ease-in-out;
-
-            
-
+      -moz-transition: all 0.1s ease-in-out;
+      -webkit-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out;
+     
+      .dd-right {
+        vertical-align: middle;
+        padding: 5px 15px;
+        
+        .dd-right-title {
+          font-weight: 400;
         }
-        .dd-left:hover {
-              transform:rotate(15deg);
-    -ms-transform:rotate(15deg);
-    -webkit-transform:rotate(15deg);
-            }
-        .dd-right {
-            vertical-align: middle;
-            padding: 5px 20px 5px 15px;
-            .dd-right-title {
-                font-weight: 400;
-                color:#272830;
-            }
-            .dd-right-description {
-                font-weight: 300;
-                font-size: 0.80rem;
-                line-height:1rem;
-                margin-bottom:5px;
-                color:#85868d;
-            }
+
+        .dd-right-description {
+          font-size: 0.80rem;
+          line-height:1rem;
+          margin-bottom:5px;
         }
+      }
     }
     .result-link:last-child, 
     .result-link:nth-child(5){
       border-bottom:none;
     }
-    .result-link:hover {
+    .result-link:hover, 
+    .result-link:hover .dd-right .dd-right-title, 
+    .result-link:hover .dd-right .dd-right-description{
       background:$rx-grey;
+      color:$rx-hgBlue;
     }
 }
 
