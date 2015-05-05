@@ -189,7 +189,7 @@ body{.panel{
         .rx-ind-blue3-bg {background:$rx-ind-blue3;}
         .rx-ind-blue3-br {@extend .rx-br; border-color:$rx-ind-blue3;}
       
-      //Rexel Color Pallete
+      // Rexel Color Pallete
       .rx-blue {color:$rx-blue;}
       .rx-blue-bg {background:$rx-blue;}
       .rx-blue-br {@extend .rx-br; border-color:$rx-blue;}
@@ -202,7 +202,7 @@ body{.panel{
       .rx-orange-bg {background:$rx-orange;}
       .rx-orange-br {@extend .rx-br; border-color:$rx-orange;}
 
-      //Hagemeyer Color Pallete
+      // Hagemeyer Color Pallete
       .rx-hgBlue {color:$rx-hgBlue;}
       .rx-hgBlue-bg {background:$rx-hgBlue;}
       .rx-hgBlue-br {@extend .rx-br; border-color:$rx-hgBlue;}
@@ -211,7 +211,7 @@ body{.panel{
       .rx-hgOrange-bg {background:$rx-hgOrange;}
       .rx-hgOrange-br {@extend .rx-br; border-color:$rx-hgOrange;}
 
-      //semi-opaque colors
+      // semi-opaque colors
       @mixin rx-alpha-attribute($attribute, $color, $background) {
         $percent: alpha($color) * 100%;
         $opaque: opacify($color, 1);
@@ -220,9 +220,17 @@ body{.panel{
         #{$attribute}: $color;
       }
 
-      //text colors
+      // text colors
       .rx-textGrey-75 {@include rx-alpha-attribute('color', rgba($rx-textGrey, 0.75), white);}
       .rx-textGrey-50 {@include rx-alpha-attribute('color', rgba($rx-textGrey, 0.50), white);}       
+
+      // gradient colors
+      .rx-white-gradient {
+        background-color: #ffffff;
+          @include filter-gradient(#ffffff, #efefef, vertical);
+          $experimental-support-for-svg: true;
+          @include background-image(linear-gradient(top, #ffffff 0%,#efefef 100%));
+        }
 
 }}
 
