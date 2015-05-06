@@ -13,19 +13,19 @@
   
   // indicator 
     $rx-ind-red: #d95553;
-   $rx-ind-red2: #e79392;
+   $rx-ind-red2: #efc8c8;
    $rx-ind-red3: #b72b28;
 
  $rx-ind-yellow: #efad58;
-$rx-ind-yellow2: #f6cf9e;
+$rx-ind-yellow2: #fadfbd;
 $rx-ind-yellow3: #e58a16;
 
   $rx-ind-green: #007b34;
- $rx-ind-green2: #c7efd8;
+ $rx-ind-green2: #dbfae8;
  $rx-ind-green3: #006229;
 
    $rx-ind-blue: #066cb6;
-  $rx-ind-blue2: #d2ebfe;
+  $rx-ind-blue2: #e2f3ff;
   $rx-ind-blue3: #044f85;
 
   // rexel
@@ -34,8 +34,8 @@ $rx-ind-yellow3: #e58a16;
      $rx-orange: #ee7803;
 
   // hagemeyer
-     $rx-hgBlue: #0F6AB3;
-   $rx-hgOrange: #E86D12;
+     $rx-hgBlue: #0068b4;
+   $rx-hgOrange: #f39100;
 
    // just in case
       $rx-black: #000000;
@@ -240,7 +240,12 @@ body{
       .rx-overlay-black {
         background:$rx-black;
         @include rx-opacity(0.7);
-      }     
+      }
+
+      .rx-overlay-white {
+        background:$rx-white;
+        @include rx-opacity(0.7);
+      }      
 
       // gradient colors
         // below is standard compass for gradients 
@@ -320,9 +325,16 @@ body{
 body {
     background: $rx-white;
 
+    p,li,ul,div,container,section {
+      font-size:14px;
+    }
     .reveal-modal-bg {
       @extend .rx-overlay-black;
       cursor:pointer;
+    }
+
+    .reveal-modal-bg.reveal-change-white {
+      @extend .rx-overlay-white;
     }
 
     a {
@@ -334,10 +346,14 @@ body {
         outline: 0;
     }
 }
+body {
+  background:$rx-white;
+  color: $rx-textGrey;
+  font-family: 'Open Sans', sans-serif;
 
-body, h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
-    color: $rx-textGrey;
+  }
 }
 
 //fix the nav situation
@@ -621,7 +637,6 @@ section.panel {
     }
     h1,h2,h3,h4,h5,h6 {
       color: $rx-textGrey;
-      font-weight:300;
     }
     p {color: $rx-textGrey;}
     .hash-title {
@@ -636,6 +651,9 @@ section.panel {
         -ms-transition: color 0.2s ease-in-out;
         transition: color 0.2s ease-in-out;
         cursor: pointer;
+        a {
+          font-size:14px;
+        }
     }
     .hash-title:hover {
         color: $rx-hgBlue;
@@ -643,6 +661,9 @@ section.panel {
     .subsection {
       margin-top:60px;
     } 
+    .snippet p {
+      margin:10px 0;
+    }
     span.code {
       font-family: Consolas, "Liberation Mono", Courier, monospace;
       color: $rx-textGrey;

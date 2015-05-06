@@ -1,5 +1,8 @@
 <h2 class="hash-title">Colors</h2>
+
 <div class="panel">
+<a href="" class="right">Download Swatches <i class="fa fa-cloud-download"></i></a><br>
+<a href="" class="right">Copy Section Link <i class="fa fa-link"></i></a>
 	<div class="large-12 columns">
 		<h3 class="subsection">Usage</h3>
 		<p>
@@ -21,7 +24,8 @@
 		<a du-scrollspy du-smooth-scroll href="#">See More About Borders <i class="fa fa-chevron-right"></i></a><br></p>
 
 		<h3 class="subsection">Using color classes together</h3>
-		You can use these color classes together by adding multiple classes in succession. For example; 
+		<span class="snippet">
+		<p>You can use these color classes together by adding multiple classes in succession. For example; </p>
 		
 		<div hljs language="html">
 			<div class="rx-hgBlue-bg rx-blue-br rx-white">&#10;
@@ -29,13 +33,14 @@
 				&#09;a 'Rexel Blue' border, with 'Rexel White' text color.&#10;
 			</div>
 		</div>
-		will output:
+		<p>will output: </p>
 		<div class="rx-hgBlue-bg rx-blue-br rx-white snippet-example">
 			This will output a box with a 'Hagemeyer Blue' background, 
 			a 'Rexel Blue' border, with 'Rexel White' text color.
 		</div>
 
 		</p>	
+		</span>
 	</div>
 
 
@@ -125,7 +130,7 @@
 					
 				</div>
 				<div class="rx-ind-red2-bg secondColor left">
-				<code>#e79392</code><br>
+				<code>#efc8c8</code><br>
 
 				</div>
 				<div class="rx-ind-red3-bg tertColor right"><code>#b72b28</code></div>
@@ -143,7 +148,7 @@
 					<code>.rx-ind-yellow-bg</code><br>
 					<code>.rx-ind-yellow-br</code><br>
 				</div>
-				<div class="rx-ind-yellow2-bg secondColor left"><code>#f6cf9e</code></div>
+				<div class="rx-ind-yellow2-bg secondColor left"><code>#fadfbd</code></div>
 				<div class="rx-ind-yellow3-bg tertColor right"><code>#e58a16</code></div>
 			</div>
 
@@ -159,7 +164,7 @@
 					<code>.rx-ind-green-bg</code><br>
 					<code>.rx-ind-green-br</code><br>
 				</div>
-				<div class="rx-ind-green2-bg secondColor left"><code>#c7efd8</code></div>
+				<div class="rx-ind-green2-bg secondColor left"><code>#dbfae8</code></div>
 				<div class="rx-ind-green3-bg tertColor right"><code>#006229</code></div>
 			</div>
 
@@ -175,26 +180,12 @@
 					<code>.rx-ind-blue-bg</code><br>
 					<code>.rx-ind-blue-br</code><br>
 				</div>
-				<div class="rx-ind-blue2-bg secondColor left"><code>#bee2fd</code></div>
+				<div class="rx-ind-blue2-bg secondColor left"><code>#e2f3ff</code></div>
 				<div class="rx-ind-blue3-bg tertColor right"><code>#044f85</code></div>
 			</div>
 
 			<div class="large-12 columns">
 			<h3 class="subsection">Global Colors - Other</h3>
-			</div>
-
-			<div class="color-definition large-3 columns">
-				<div class="color-top rx-white-gradient rx-br"> </div>
-				<div class="color-info">
-					<span class="right">
-						<code class="right"> </code><br>
-						<code class="right rx-hide"> </code>
-					</span>			
-					<strong>Rexel White Gradient</strong><br>
-					<span>from <code>#ffffff</code> (top) to <code>#dadada</code> (bottom)</span>
-					<span><code>.rx-white-gradient</code> (background only)</span><br>
-					<code> </code><br>
-				</div>
 			</div>
 
 			<div class="color-definition large-3 columns">
@@ -213,11 +204,7 @@
 
 			<div class="color-definition large-3 columns">
 				<div class="color-top rx-white-bg rx-br rx-placeholder-text">Lorem ipsum dolor sit amet, vim delenit eleifend.</div>
-				<div class="color-info">
-					<span class="right">
-						<code class="right"> </code><br>
-						<code class="right"> </code>
-					</span>			
+				<div class="color-info">		
 					<strong>Rexel Placeholder Text</strong><br>
 					<span><code>#58585a</code> @ 75% opacity</span><br>
 					<span><code>.rx-placeholder-text</code> (text only)</span><br>
@@ -225,18 +212,51 @@
 				</div>
 			</div>
 
+			
+
 			<div class="color-definition large-3 columns">
 				<div class="color-top rx-white-bg rx-br">
-				<a href="#" data-reveal-id="rx-overlay-example">Click Me For An Overlay!</a>
+				<a class="overlayCTA wOv" data-reveal-id="rx-overlay-example">Click Me For A White Overlay!</a>
+				<script type="text/javascript">
+				$('.overlayCTA').click(function() {
+					if ($(this).hasClass('wOv')) {
+						$('.reveal-modal-bg').addClass('reveal-change-white');
+					} else {
+						$('.reveal-modal-bg').removeClass('reveal-change-white');
+					}
+				});
+				</script>
 				</div>
-				<div class="color-info">
-					<span class="right">
-						<code class="right"> </code><br>
-						<code class="right"> </code>
-					</span>			
+				<div class="color-info">		
+					<strong>Rexel Overlay White</strong><br>
+					<span><code>#ffffff</code> @ 70% opacity</span><br>
+					<span><code>.rx-overlay-white</code> (background-only)</span><br>
+					<code> </code><br>
+				</div>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-white-bg rx-br">
+				<a class="overlayCTA" data-reveal-id="rx-overlay-example">Click Me For A Black Overlay!</a>
+				</div>
+				<div class="color-info">	
 					<strong>Rexel Overlay Black</strong><br>
 					<span><code>#000000</code> @ 70% opacity</span><br>
 					<span><code>.rx-overlay-black</code> (background-only)</span><br>
+					<code> </code><br>
+				</div>
+			</div>
+				
+			<div class="large-12 columns">
+			<h3 class="subsection">Global Gradient</h3>
+			</div>
+
+			<div class="color-definition large-3 columns">
+				<div class="color-top rx-white-gradient rx-br"> </div>
+				<div class="color-info">	
+					<strong>Rexel White Gradient</strong><br>
+					<span>from <code>#ffffff</code> (top) to <code>#dadada</code> (bottom)</span><br>
+					<span><code>.rx-white-gradient</code> (background only)</span><br>
 					<code> </code><br>
 				</div>
 			</div>
@@ -301,7 +321,7 @@
 				<div class="color-top rx-hgBlue-bg"> </div>
 				<div class="color-info">
 					<span class="right">
-						<code class="right">#0F6AB3</code><br>
+						<code class="right">#0068b4</code><br>
 						<code class="right rx-hide">$rx-hgBlue</code>
 					</span>	
 					<strong>Hagemeyer Blue</strong><br>
@@ -315,7 +335,7 @@
 				<div class="color-top rx-hgOrange-bg"> </div>
 				<div class="color-info">
 					<span class="right">
-						<code class="right">#E86D12</code><br>
+						<code class="right">#f39100</code><br>
 						<code class="right rx-hide">$rx-hgOrange</code>
 					</span>			
 					<strong>Hagemeyer Orange</strong><br>
@@ -326,13 +346,169 @@
 				</div>
 			</div>
 
-			
+			<div class="large-12 columns">
+			<h3 class="subsection">Color Index</h3>
+			<table>
+				<tr>
+					<th>Color</th>
+					<th>HEX Value</th>
+					<th>Usage</th>
+				</tr>
+
+				<tr>
+					<td>Rexel White</td>
+					<td><code>#ffffff</code></td>
+					<td>
+						<a>Body Background, </a>
+						<a>Input Background, </a>
+						<a>Primary Button Text</a>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Rexel Grey</td>
+					<td><code>#dadada</code></td>
+					<td>
+						<a>Panels, </a>
+						<a>Table Header</a>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Rexel Border Grey</td>
+					<td><code>#f5f5f5</code></td>
+					<td>
+						<a>Borders, </a>
+						<a>Input Border, </a>
+						<a>HR Tags, </a>
+						<a>Inverse Button Border</a>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Rexel Text Grey</td>
+					<td><code>#58585a</code></td>
+					<td>
+						<a>Body Text, </a>
+						<a>Links</a>
+					</td>
+				</tr>
+				<tr>
+					<td>Indicator Red</td>
+					<td><code>#d95553</code></td>
+					<td>
+						<a>Indicator Alert Icon, </a>
+						<a>Indicator Alert Text, </a>
+						<a>Alert Background</a>
+					</td>
+				</tr>
+				<tr>
+					<td>Indicator Yellow</td>
+					<td><code>#efad58</code></td>
+					<td>
+						<a>Indicator Warning Icon, </a>
+						<a>Indicator Warning Text, </a>
+						<a>Warning Background</a>
+					</td>
+				</tr>
+				<tr>
+					<td>Indicator Green</td>
+					<td><code>#007b34</code></td>
+					<td>
+						<a>Indicator Success Icon, </a>
+						<a>Indicator Success Text, </a>
+						<a>Success Background</a>
+					</td>
+				</tr>
+				<tr>
+					<td>Indicator Blue</td>
+					<td><code>#066cb6</code></td>
+					<td>
+						<a>Indicator Info Icon, </a>
+						<a>Indicator Info Text, </a>
+						<a>Info Background</a>
+					</td>
+				</tr>
+				<tr>
+					<td>Rexel Disabled Text</td>
+					<td><code>#58585a</code> @ 50% opacity</td>
+					<td>
+						<a>Disabled Button Text, </a>
+						<a>Disabled Link Text</a>
+					</td>
+				</tr>
+				<tr>
+					<td>Rexel Placeholder Text</td>
+					<td><code>#58585a</code> @ 75% opacity</td>
+					<td>
+						<a>Input Placeholder, </a>
+						<a>Textarea Placeholder, </a>
+						<a>Radio Button Fill, </a>
+						<a>Checkmark Box Fill</a>
+					</td>
+				</tr>
+				<tr>
+					<td>Rexel Overlay White</td>
+					<td><code>#ffffff</code> @ 70% opacity</td>
+					<td>
+						<a>Modal Overlay</a>
+					</td>
+				</tr>
+				<tr>
+					<td>Rexel Overlay Black</td>
+					<td><code>#000000</code> @ 70% opacity</td>
+					<td>
+						<a>Modal Overlay</a>
+					</td>
+				</tr>
+				<tr>
+					<td>Rexel White Gradient</td>
+					<td>from <code>#ffffff</code> (top) to <code>#dadada</code> (bottom)</td>
+					<td>
+						<a>Inverse Button</a>
+					</td>
+				</tr>
+				<tr>
+					<td>Rexel Blue</td>
+					<td><code>#2a3e87</code></td>
+					<td><a>Site Specific Primary Color</a></td>
+				</tr>
+				<tr>
+					<td>Rexel Secondary Blue</td>
+					<td><code>#4487bd</code></td>
+					<td><a>Site Specific Secondary Color</a></td>
+				</tr>
+				<tr>
+					<td>Rexel Orange</td>
+					<td><code>#ee7803</code></td>
+					<td><a>Site Specific Tertiary Color</a></td>
+				</tr>
+				<tr>
+					<td>Hagemeyer Blue</td>
+					<td><code>#0068b4</code></td>
+					<td><a>Site Specific Primary Color</a></td>
+				</tr>
+				<tr>
+					<td>Hagemeyer Orange</td>
+					<td><code>#f39100</code></td>
+					<td><a>Site Specific Secondary Color</a></td>
+				</tr>
+
+			</table>
+			</div>
 
 		</div>
-			<br><br><br><br>
-			<strong>To Do:</strong><br>
-			Explain what uses each color <br>
-			copy <br>
+
+			<div class="rx-ind-red-br rx-br-top rx-br-bottom" style="padding:10px; margin-top:50px;">
+				<strong>To Do:</strong>
+				<ul>
+					<li>Complete Color Index</li>
+					<li>Fallback Background Image for Gradient</li>
+					<li>Disabled Button Colors</li>
+					<li>Copy</li>
+				</ul>
+			</div>
+			
 
 		</div>
 </div>
