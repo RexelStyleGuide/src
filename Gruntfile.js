@@ -216,7 +216,7 @@ module.exports = function (grunt) {
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
         httpFontsPath: '/styles/fonts',
-        relativeAssets: false,
+        relativeAssets: true,
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
       },
@@ -402,7 +402,7 @@ module.exports = function (grunt) {
         'compass'
       ],
       dist: [
-       // 'compass:dist'
+        'compass:dist',
         'imagemin',
         'svgmin'
       ]

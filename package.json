@@ -1,7 +1,9 @@
 {
   "name": "src",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "imagemin-optipng": "^4.2.0"
+  },
   "repository": {},
   "devDependencies": {
     "grunt": "^0.4.5",

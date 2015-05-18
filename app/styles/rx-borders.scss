@@ -1,6 +1,9 @@
 /* ==========================================================================
   BORDERS
   ========================================================================== */
+  
+  @import "rx-color-vars";
+
   /* SASS===== BORDER SASS MIXIN */
   @mixin rx-br-mix($width:1px, $style:solid, $color:$rx-brGrey) {
     border: {
