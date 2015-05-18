@@ -2,326 +2,437 @@
 // endbower
 
 
+/* ==========================================================================
+                        BEGIN RX-FRAMEWORK SOURCE SCSS CODE
+  ========================================================================== */
+@import "rx-functions";
+@import "rx-global";
+@import "rx-color-vars";
+@import "rx-borders";
 
-// live usage
+
+
+@import "rx-grid";
+@import "rx-accordion";
+@import "rx-alert-boxes";
+@import "rx-block-grid";
+@import "rx-breadcrumbs";
+@import "rx-button-groups";
+@import "rx-buttons";
+@import "rx-clearing";
+@import "rx-dropdown";
+@import "rx-dropdown-buttons";
+@import "rx-flex-video";
+@import "rx-forms";
+@import "rx-icon-bar";
+@import "rx-inline-lists";
+@import "rx-joyride";
+@import "rx-keystrokes";
+@import "rx-labels";
+@import "rx-magellan";
+@import "rx-orbit";
+@import "rx-pagination";
+@import "rx-panels";
+@import "rx-pricing-tables";
+@import "rx-progress-bars";
+@import "rx-range-slider";
+@import "rx-reveal";
+@import "rx-side-nav";
+@import "rx-split-buttons";
+@import "rx-sub-nav";
+@import "rx-switches";
+@import "rx-tables";
+@import "rx-tabs";
+@import "rx-thumbs";
+@import "rx-tooltips";
+@import "rx-top-bar";
+@import "rx-type";
+@import "rx-offcanvas";
+@import "rx-visibility";
+
+
+
+
+
+
   
-  // global
-       $rx-grey: #f5f5f5;
-     $rx-brGrey: #dadada;
-   $rx-textGrey: #58585a;
-      $rx-white: #ffffff;
-  
-  // indicator 
-    $rx-ind-red: #d95553;
-   $rx-ind-red2: #efc8c8;
-   $rx-ind-red3: #b72b28;
-
- $rx-ind-yellow: #efad58;
-$rx-ind-yellow2: #fadfbd;
-$rx-ind-yellow3: #e58a16;
-
-  $rx-ind-green: #007b34;
- $rx-ind-green2: #dbfae8;
- $rx-ind-green3: #006229;
-
-   $rx-ind-blue: #066cb6;
-  $rx-ind-blue2: #e2f3ff;
-  $rx-ind-blue3: #044f85;
-
-  // rexel
-       $rx-blue: #2a3e87;
-      $rx-blue2: #4487bd;
-     $rx-orange: #ee7803;
-
-  // hagemeyer
-     $rx-hgBlue: #0068b4;
-   $rx-hgOrange: #f39100;
-
-   // just in case
-      $rx-black: #000000;
 
 
-// for specificity
-body{
 
-  // borders
-    // base global border style
-    .rx-br {border: 1px solid $rx-brGrey;}
 
-    // border omission
 
-      // omit all 4 sides
-      .rx-br-omit {@extend .rx-br; border-width:0;}
+body{ /* FOR SPECIFICITY */
 
-      // omit sides individually
-      .rx-br-top-omit {@extend .rx-br; border-top-width:0;}
-      .rx-br-right-omit {@extend .rx-br; border-right-width:0;}
-      .rx-br-bottom-omit {@extend .rx-br; border-bottom-width:0;}
-      .rx-br-left-omit {@extend .rx-br; border-left-width:0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+  BORDER RADIUS
+  ========================================================================== */
+  /* SASS===== BORDER RADIUS SASS MIXIN */
+  @mixin rx-br-rad-mix($topLeft:true, $topRight:true, $bottomRight:true, $bottomLeft:true) {
+    /* SET BASE BORDER RADIUS HERE */
+    $rad:3px;
+
+    @if $topLeft {
+          -webkit-border-radius-topleft: $rad; 
+            -moz-border-top-left-radius: $rad;
+                 border-top-left-radius: $rad;
+    } 
+    @if $topRight {
+         -webkit-border-radius-topright: $rad; 
+           -moz-border-top-right-radius: $rad;
+                border-top-right-radius: $rad;
+    }
+    @if $bottomRight {
+      -webkit-border-radius-bottomright: $rad; 
+        -moz-border-bottom-right-radius: $rad;
+             border-bottom-right-radius: $rad;
+    }
+    @if $bottomLeft {
+       -webkit-border-radius-bottomleft: $rad; 
+         -moz-border-bottom-left-radius: $rad;
+              border-bottom-left-radius: $rad;
+    }
+      background-clip: padding-box;
+  }
+
+  /* ===== BASE BORDER RADIUS STYLE ===== */
+  .rx-br-rad                   {@include rx-br-rad-mix(true, true, true, true);}
+
+  /* ===== BORDER RADIUS OMISSION RULES ===== */
+  /* OMIT ALL CORNERS */
+  .rx-br-rad-omit          {@include rx-br-rad-mix(false, false, false, false);}
+
+  /* OMIT CORNERS INDIVIDUALLY */
+  .rx-br-rad-topLeft-omit     {@include rx-br-rad-mix(false, true, true, true);}
+  .rx-br-rad-topRight-omit    {@include rx-br-rad-mix(true, false, true, true);}
+  .rx-br-rad-bottomRight-omit {@include rx-br-rad-mix(true, true, false, true);}
+  .rx-br-rad-bottomLeft-omit  {@include rx-br-rad-mix(true, true, true, false);}
     
-    // one sided border only
-    .rx-br-top {@extend .rx-br-omit; border-top-width:1px;}
-    .rx-br-right {@extend .rx-br-omit; border-right-width:1px;}
-    .rx-br-bottom {@extend .rx-br-omit; border-bottom-width:1px;}
-    .rx-br-left {@extend .rx-br-omit; border-left-width:1px;}
-
-
-    //border radius
-      // all sides mixin
-      @mixin rx-br-rad-mix($topLeft:true, $topRight:true, $bottomRight:true, $bottomLeft:true) {
-        $rad:3px;
-        @if $topLeft {
-          -moz-border-radius-topleft:$rad; 
-          -webkit-border-top-left-radius:$rad;
-          border-top-left-radius: $rad;
-        }
-        @if $topRight {
-          -moz-border-radius-topright:$rad; 
-          -webkit-border-top-right-radius:$rad;
-          border-top-right-radius: $rad;
-        }
-        @if $bottomRight {
-          -moz-border-radius-bottomright:$rad; 
-          -webkit-border-bottom-right-radius:$rad;
-          border-bottom-right-radius: $rad;
-        }
-        @if $bottomLeft {
-          -moz-border-radius-bottomleft:$rad; 
-          -webkit-border-bottom-left-radius:$rad;
-          border-bottom-left-radius: $rad;
-        }
-        background-clip: padding-box;
-      }
-
-      // border radius all corners
-      .rx-br-rad {@include rx-br-rad-mix(true, true, true, true);}
-
-      // border radius omission
-        // border radius omit all corners
-        .rx-br-rad-omit {@include rx-br-rad-mix(false, false, false, false);}
-        // border raidus omit specific corners
-        .rx-br-rad-topLeft-omit {@include rx-br-rad-mix(false, true, true, true);}
-        .rx-br-rad-topRight-omit {@include rx-br-rad-mix(true, false, true, true);}
-        .rx-br-rad-bottomRight-omit {@include rx-br-rad-mix(true, true, false, true);}
-        .rx-br-rad-bottomLeft-omit {@include rx-br-rad-mix(true, true, true, false);}
-
+  /* ===== BORDER RADIUS SPECIFICITY ===== */
+  /* SELECTIVELY ADD BORDER RADIUS TO A SIDE (TOP,RIGHT,BOTTOM,LEFT) */
+  .rx-br-rad-top            {@include rx-br-rad-mix(true, true, false, false);}
+  .rx-br-rad-right          {@include rx-br-rad-mix(false, true, true, false);}
+  .rx-br-rad-bottom         {@include rx-br-rad-mix(false, false, true, true);}
+  .rx-br-rad-left           {@include rx-br-rad-mix(true, false, false, true);}
       
-      // border radius include both corners on specific side
-      .rx-br-rad-top {@include rx-br-rad-mix(true, true, false, false);}
-      .rx-br-rad-right {@include rx-br-rad-mix(false, true, true, false);}
-      .rx-br-rad-bottom {@include rx-br-rad-mix(false, false, true, true);}
-      .rx-br-rad-left {@include rx-br-rad-mix(true, false, false, true);}
-      
-      // border radius on specific corners
-      .rx-br-rad-topLeft {@include rx-br-rad-mix(rue, false, false, false);}
-      .rx-br-rad-topRight {@include rx-br-rad-mix(false, true, false, false);}
-      .rx-br-rad-bottomRight {@include rx-br-rad-mix(false, false, true, false);}
-      .rx-br-rad-bottomLeft {@include rx-br-rad-mix(false, false, false, true);}
+  /* SELECTIVELY ADD BORDER RADIUS TO A SPECIFIC CORNER */
+  .rx-br-rad-topLeft        {@include rx-br-rad-mix(rue, false, false, false);}
+  .rx-br-rad-topRight      {@include rx-br-rad-mix(false, true, false, false);}
+  .rx-br-rad-bottomRight   {@include rx-br-rad-mix(false, false, true, false);}
+  .rx-br-rad-bottomLeft    {@include rx-br-rad-mix(false, false, false, true);}
 
-  
-
-  //colors
-    //global
-      //grey scale
-      .rx-white {color:$rx-white;}
-      .rx-white-bg {background:$rx-white;}
-      .rx-white-br {@extend .rx-br; border-color:$rx-white;}
-
-      .rx-grey {color:$rx-grey;}
-      .rx-grey-bg {background:$rx-grey;}
-      .rx-grey-br {@extend .rx-br; border-color:$rx-grey;}
-
-      .rx-brGrey {color:$rx-brGrey;}
-      .rx-brGrey-bg {background:$rx-brGrey;}
-      .rx-brGrey-br {@extend .rx-br; border-color:$rx-brGrey;}
-
-      .rx-textGrey {color:$rx-textGrey;}
-      .rx-textGrey-bg {background:$rx-textGrey;}
-      .rx-textGrey-br {@extend .rx-br; border-color:$rx-textGrey;}
-      
-      // indicator colors
-        // indicator red
-        .rx-ind-red,.rx-err-text,i.fa-times {color:$rx-ind-red;}
-        .rx-ind-red-bg {background:$rx-ind-red;}
-        .rx-ind-red-br {@extend .rx-br; border-color:$rx-ind-red;}
+/* 
+  END BORDER RADIUS SECTION     
+  ========================================================================== */
     
-        .rx-ind-red2 {color:$rx-ind-red2;}
-        .rx-ind-red2-bg {background:$rx-ind-red2;}
-        .rx-ind-red2-br {@extend .rx-br; border-color:$rx-ind-red2;}
-
-        .rx-ind-red3 {color:$rx-ind-red3;}
-        .rx-ind-red3-bg {background:$rx-ind-red3;}
-        .rx-ind-red3-br {@extend .rx-br; border-color:$rx-ind-red3;}
-      
-        // indicator yellow
-        .rx-ind-yellow,i.fa-exclamation {color:$rx-ind-yellow;}
-        .rx-ind-yellow-bg {background:$rx-ind-yellow;}
-        .rx-ind-yellow-br {@extend .rx-br; border-color:$rx-ind-yellow;}
-
-        .rx-ind-yellow2 {color:$rx-ind-yellow2;}
-        .rx-ind-yellow2-bg {background:$rx-ind-yellow2;}
-        .rx-ind-yellow2-br {@extend .rx-br; border-color:$rx-ind-yellow2;}
-
-        .rx-ind-yellow3 {color:$rx-ind-yellow3;}
-        .rx-ind-yellow3-bg {background:$rx-ind-yellow3;}
-        .rx-ind-yellow3-br {@extend .rx-br; border-color:$rx-ind-yellow3;}
-      
-        // indicator green
-        .rx-ind-green,i.fa-check {color:$rx-ind-green;}
-        .rx-ind-green-bg {background:$rx-ind-green;}
-        .rx-ind-green-br {@extend .rx-br; border-color:$rx-ind-green;}
-
-        .rx-ind-green2 {color:$rx-ind-green2;}
-        .rx-ind-green2-bg {background:$rx-ind-green2;}
-        .rx-ind-green2-br {@extend .rx-br; border-color:$rx-ind-green2;}
-
-        .rx-ind-green3 {color:$rx-ind-green3;}
-        .rx-ind-green3-bg {background:$rx-ind-green3;}
-        .rx-ind-green3-br {@extend .rx-br; border-color:$rx-ind-green3;}
-      
-        // indicator blue
-        .rx-ind-blue,i.fa-question-circle {color:$rx-ind-blue;}
-        .rx-ind-blue-bg {background:$rx-ind-blue;}
-        .rx-ind-blue-br {@extend .rx-br; border-color:$rx-ind-blue;}
-
-        .rx-ind-blue2 {color:$rx-ind-blue2;}
-        .rx-ind-blue2-bg {background:$rx-ind-blue2;}
-        .rx-ind-blue2-br {@extend .rx-br; border-color:$rx-ind-blue2;}
-
-        .rx-ind-blue3 {color:$rx-ind-blue3;}
-        .rx-ind-blue3-bg {background:$rx-ind-blue3;}
-        .rx-ind-blue3-br {@extend .rx-br; border-color:$rx-ind-blue3;}
-      
-      // Rexel Color Pallete
-      .rx-blue {color:$rx-blue;}
-      .rx-blue-bg {background:$rx-blue;}
-      .rx-blue-br {@extend .rx-br; border-color:$rx-blue;}
-
-      .rx-blue2 {color:$rx-blue2;}
-      .rx-blue2-bg {background:$rx-blue2;}
-      .rx-blue2-br {@extend .rx-br; border-color:$rx-blue2;}
-
-      .rx-orange {color:$rx-orange;}
-      .rx-orange-bg {background:$rx-orange;}
-      .rx-orange-br {@extend .rx-br; border-color:$rx-orange;}
-
-      // Hagemeyer Color Pallete
-      .rx-hgBlue {color:$rx-hgBlue;}
-      .rx-hgBlue-bg {background:$rx-hgBlue;}
-      .rx-hgBlue-br {@extend .rx-br; border-color:$rx-hgBlue;}
-
-      .rx-hgOrange {color:$rx-hgOrange;}
-      .rx-hgOrange-bg {background:$rx-hgOrange;}
-      .rx-hgOrange-br {@extend .rx-br; border-color:$rx-hgOrange;}
-
-      // semi-opaque colors
-      @mixin rx-alpha-attribute-mix($attribute, $color, $background) {
-        $percent: alpha($color) * 100%;
-        $opaque: opacify($color, 1);
-        $solid-color: mix($opaque, $background, $percent);
-        #{$attribute}: $solid-color;
-        #{$attribute}: $color;
-      }
-
-      // text colors
-      .rx-textGrey-75 {@include rx-alpha-attribute-mix('color', rgba($rx-textGrey, 0.75), white);}
-      .rx-textGrey-50 {@include rx-alpha-attribute-mix('color', rgba($rx-textGrey, 0.50), white);}
-
-      .rx-disabled-text {@extend .rx-textGrey-50;}
-      .rx-placeholder-text {@extend .rx-textGrey-75;}  
-
-      // overlay color
-      @mixin rx-opacity($opacity) {
-        opacity: $opacity;
-        $opacity-ie: $opacity * 100;
-        filter: alpha(opacity=$opacity-ie); //IE8
-      }
-
-      .rx-overlay-black {
-        background:$rx-black;
-        @include rx-opacity(0.7);
-      }
-
-      .rx-overlay-white {
-        background:$rx-white;
-        @include rx-opacity(0.7);
-      }      
-
-      // gradient colors
-        // below is standard compass for gradients 
-        // **see http://sassmeister.com/gist/b58f6e2cc3160007c880
-      @function convert-angle($value, $unit) {
-        $convertable-units: deg grad turn rad;
-        $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
-        @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
-          @return $value
-            / nth($conversion-factors, index($convertable-units, unit($value)))
-            * nth($conversion-factors, index($convertable-units, $unit));
-          }
-          @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
-        }
-
-        /// Test if `$value` is an angle
-        /// @param {*} $value - Value to test
-        /// @return {Bool}
-        @function is-direction($value) {
-          $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
-          $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
-          @return $is-direction or $is-angle;
-        }
-
-        /// Convert a direction to legacy syntax
-        /// @param {Keyword | Angle} $value - Value to convert
-        /// @require {function} is-direction
-        /// @require {function} convert-angle
-        @function legacy-direction($value) {
-          @if is-direction($value) == false {
-            @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
-          }
-  
-          $conversion-map: ( 
-            to top          : bottom,
-            to top right    : bottom left,
-            to right top    : left bottom,
-            to right        : left,
-            to bottom right : top left,
-            to right bottom : left top,
-            to bottom       : top,
-            to bottom left  : top right,
-            to left bottom  : right top,
-            to left         : right,
-            to left top     : right bottom,
-            to top left     : bottom right
-          );
     
-          @if map-has-key($conversion-map, $value) {@return map-get($conversion-map, $value);}
-          @return 90deg - convert-angle($value, 'deg');
-        }
+    
 
-        /// Mixin printing a linear-gradient 
-        /// as well as a plain color fallback 
-        /// and the `-webkit-` prefixed declaration
-        /// @access public
-        /// @param {String | List | Angle} $direction - Linear gradient direction
-        /// @param {Arglist} $color-stops - List of color-stops composing the gradient
-        @mixin rx-linear-gradient-mix($direction, $color-stops...) {
-          @if is-direction($direction) == false {
-            $color-stops: ($direction, $color-stops);
-            $direction: 180deg;
-          }
   
-          background: nth(nth($color-stops, 1), 1);
-          background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
-          background: linear-gradient($direction, $color-stops);
-        }
-      .rx-white-gradient {@include rx-linear-gradient-mix($rx-white, $rx-grey);}
 
-      // visiblility
+
+/* ==========================================================================
+  COLORS (CSS)
+  ========================================================================== */
+  /* ===== GREYSCALE COLORS ===== */
+  .rx-white    {color:$rx-white;}
+  .rx-white-bg {background:$rx-white;}
+  .rx-white-br {@include rx-br-mix($color:$rx-white);}
+
+  .rx-grey    {color:$rx-grey;}
+  .rx-grey-bg {background:$rx-grey;}
+  .rx-grey-br {@include rx-br-mix($color:$rx-grey);}
+
+  .rx-brGrey    {color:$rx-brGrey;}
+  .rx-brGrey-bg {background:$rx-brGrey;}
+  .rx-brGrey-br {@include rx-br-mix($color:$rx-brGrey);}
+
+  .rx-textGrey    {color:$rx-textGrey;}
+  .rx-textGrey-bg {background:$rx-textGrey;}
+  .rx-textGrey-br {@include rx-br-mix($color:$rx-textGrey);}
+      
+  /* ===== INDICATOR COLORS ===== */
+  /* INDICATOR RED */
+  .rx-ind-red,.rx-err-text,i.fa-times {color:$rx-ind-red;}
+  .rx-ind-red-bg {background:$rx-ind-red;}
+  .rx-ind-red-br {@include rx-br-mix($color:$rx-ind-red);}
+
+  /* PALE */
+    .rx-ind-red2 {color:$rx-ind-red2;}
+    .rx-ind-red2-bg {background:$rx-ind-red2;}
+    .rx-ind-red2-br {@include rx-br-mix($color:$rx-ind-red2);}
+  /* DARK */
+    .rx-ind-red3 {color:$rx-ind-red3;}
+    .rx-ind-red3-bg {background:$rx-ind-red3;}
+    .rx-ind-red3-br {@include rx-br-mix($color:$rx-ind-red3);}
+      
+  /* INDICATOR YELLOW */
+  .rx-ind-yellow,i.fa-exclamation {color:$rx-ind-yellow;}
+  .rx-ind-yellow-bg {background:$rx-ind-yellow;}
+  .rx-ind-yellow-br {@include rx-br-mix($color:$rx-ind-yellow);}
+
+  /* PALE */
+    .rx-ind-yellow2 {color:$rx-ind-yellow2;}
+    .rx-ind-yellow2-bg {background:$rx-ind-yellow2;}
+    .rx-ind-yellow2-br {@include rx-br-mix($color:$rx-ind-yellow2);}
+  /* DARK */
+    .rx-ind-yellow3 {color:$rx-ind-yellow3;}
+    .rx-ind-yellow3-bg {background:$rx-ind-yellow3;}
+    .rx-ind-yellow3-br {@include rx-br-mix($color:$rx-ind-yellow3);}
+      
+  /* INDICATOR GREEN */
+  .rx-ind-green,i.fa-check {color:$rx-ind-green;}
+  .rx-ind-green-bg {background:$rx-ind-green;}
+  .rx-ind-green-br {@include rx-br-mix($color:$rx-ind-green);}
+
+  /* PALE */
+    .rx-ind-green2 {color:$rx-ind-green2;}
+    .rx-ind-green2-bg {background:$rx-ind-green2;}
+    .rx-ind-green2-br {@include rx-br-mix($color:$rx-ind-green2);}
+  /* DARK */
+    .rx-ind-green3 {color:$rx-ind-green3;}
+    .rx-ind-green3-bg {background:$rx-ind-green3;}
+    .rx-ind-green3-br {@include rx-br-mix($color:$rx-ind-green3);}
+      
+  /* INDICATOR BLUE */
+  .rx-ind-blue,i.fa-question-circle {color:$rx-ind-blue;}
+  .rx-ind-blue-bg {background:$rx-ind-blue;}
+  .rx-ind-blue-br {@include rx-br-mix($color:$rx-ind-blue);}
+
+  /* PALE */
+    .rx-ind-blue2 {color:$rx-ind-blue2;}
+    .rx-ind-blue2-bg {background:$rx-ind-blue2;}
+    .rx-ind-blue2-br {@include rx-br-mix($color:$rx-ind-blue2);}
+  /* DARK */
+    .rx-ind-blue3 {color:$rx-ind-blue3;}
+    .rx-ind-blue3-bg {background:$rx-ind-blue3;}
+    .rx-ind-blue3-br {@include rx-br-mix($color:$rx-ind-blue3);}
+      
+  /* ===== REXEL COLOR PALETTE ===== */
+  .rx-blue {color:$rx-blue;}
+  .rx-blue-bg {background:$rx-blue;}
+  .rx-blue-br {@include rx-br-mix($color:$rx-blue);}
+
+  .rx-blue2 {color:$rx-blue2;}
+  .rx-blue2-bg {background:$rx-blue2;}
+  .rx-blue2-br {@include rx-br-mix($color:$rx-blue2);}
+
+  .rx-orange {color:$rx-orange;}
+  .rx-orange-bg {background:$rx-orange;}
+  .rx-orange-br {@include rx-br-mix($color:$rx-orange);}
+
+  /* ===== HAGEMEYER COLOR PALETTE ===== */
+  .rx-hgBlue {color:$rx-hgBlue;}
+  .rx-hgBlue-bg {background:$rx-hgBlue;}
+  .rx-hgBlue-br {@include rx-br-mix($color:$rx-hgBlue);}
+
+  .rx-hgOrange {color:$rx-hgOrange;}
+  .rx-hgOrange-bg {background:$rx-hgOrange;}
+  .rx-hgOrange-br {@include rx-br-mix($color:$rx-hgOrange);}
+  
+  /* ===== OTHER COLOR PALETTES GO HERE ===== */
+
+  /* ===== SEMI OPAQUE TEXT COLORS ===== */
+  /* SASS===== SEMI OPAQUE TEXT SASS MIXIN */
+  @mixin rx-alpha-attribute-mix($attribute, $color, $background) {
+    $percent: alpha($color) * 100%;
+    $opaque: opacify($color, 1);
+    $solid-color: mix($opaque, $background, $percent);
+    #{$attribute}: $solid-color;
+    #{$attribute}: $color;
+  }
+
+  /* SEMI OPAQUE TEXT COLORS */
+  .rx-disabled-text    {@include rx-alpha-attribute-mix('color', rgba($rx-textGrey, 0.50), white);}
+  .rx-placeholder-text {@include rx-alpha-attribute-mix('color', rgba($rx-textGrey, 0.75), white);}
+
+  /* ===== OVERLAY COLORS ===== */
+  /* SASS===== OPACITY SASS MIXIN */
+  @mixin rx-opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+  }
+
+  .rx-overlay-black {
+    background:$rx-black;
+    @include rx-opacity(0.7);
+  }
+
+  .rx-overlay-white {
+    background:$rx-white;
+    @include rx-opacity(0.7);
+  }      
+
+  /* ===== GRADIENT COLORS ===== */
+  /* SASS===== BACKGROUND GRADIENT SASS MIXIN FROM COMPASS, SEE http://sassmeister.com/gist/b58f6e2cc3160007c880 */
+  @function convert-angle($value, $unit) {
+    $convertable-units: deg grad turn rad;
+    $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
+    @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+      @return $value
+      / nth($conversion-factors, index($convertable-units, unit($value)))
+      * nth($conversion-factors, index($convertable-units, $unit));
+    }
+    @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
+  }
+
+  @function is-direction($value) {
+    $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+    $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+    @return $is-direction or $is-angle;
+  }
+
+  @function legacy-direction($value) {
+    @if is-direction($value) == false {
+      @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
+    }
+  
+    $conversion-map: ( 
+      to top          : bottom,
+      to top right    : bottom left,
+      to right top    : left bottom,
+      to right        : left,
+      to bottom right : top left,
+      to right bottom : left top,
+      to bottom       : top,
+      to bottom left  : top right,
+      to left bottom  : right top,
+      to left         : right,
+      to left top     : right bottom,
+      to top left     : bottom right
+    );
+    
+    @if map-has-key($conversion-map, $value) {@return map-get($conversion-map, $value);}
+    @return 90deg - convert-angle($value, 'deg');
+  }
+
+  @mixin rx-linear-gradient-mix($direction, $color-stops...) {
+    @if is-direction($direction) == false {
+      $color-stops: ($direction, $color-stops);
+      $direction: 180deg;
+    } 
+
+    background: nth(nth($color-stops, 1), 1);
+    background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+    background: linear-gradient($direction, $color-stops);
+
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/rx-btn-white-bg.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/rx-btn-white-bg.png', sizingMethod='scale')";
+  }
+  
+  /* WHITE GRADIENT */
+  .rx-white-gradient {@include rx-linear-gradient-mix($rx-white, $rx-grey);}
+
+/* 
+   END COLORS (CSS)
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+  BUTTONS
+  ========================================================================== */
+  /* SASS===== BUTTON SASS MIXIN */
+  @mixin rx-btn-mix($bg:$rx-blue, $br:$rx-blue, $text:$rx-white) {
+    @include rx-br-mix($color:$rx-blue);;
+    background: $bg;
+    color: $text;
+    text-align:center;
+    display:inline-block;
+    cursor:pointer;
+    font-weight:normal;
+    height:auto;
+    min-width:150px;
+    padding:10px 20px;
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:0.025em;
+
+    &:hover {
+      text-decoration:none;
+      background: #3149A3;
+    }
+  }
+
+  .rx-btn, 
+  a.rx-btn,
+  button,
+  button.rx-btn {
+    @include rx-btn-mix();     
+  }
+      
+      
+
+      /* ==========================================================================
+         HELPER CLASSES
+         ========================================================================== */
+        
+        /* VISIBILITY */
         .rx-hide {display:none;}
+        .rx-block {display:block;}
+        .rx-inline {display:inline;}
+        .rx-inline-block {display:inline-block;}
+
+        /* TEXT ALIGNMENT */
+        .rx-text-center {text-align:center;}
+        .rx-text-left {text-align:left;}
+        .rx-text-right {text-align:right;}
+        .rx-text-justify {text-align:justify;}
+
+        /* CURSOR */
+        .rx-pointer {cursor:pointer;}
+
+        /* FONT WEIGHTS */
+        .rx-font-normal {font-weight:normal;}
+        .rx-font-bold {font-weight:bold;}
 
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   CUSTOM CSS
+   ========================================================================== */
 body {
     background: $rx-white;
 

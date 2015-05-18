@@ -1,0 +1,59 @@
+/* ==========================================================================
+  SASS COLOR VARIABLES
+
+  TO DO:
+  ==> DEFINE SITE SPECIFIC BUTTON COLORS
+  ==> DEFINE DISABLED BUTTON COLORS
+  ==> GET LIST OF SITES
+  ==> DEFINE SITE COLORS
+  ========================================================================== */
+
+  /* ===== GLOBAL COLORS ===== */
+       $rx-grey: #f5f5f5;
+     $rx-brGrey: #dadada;
+   $rx-textGrey: #58585a;
+      $rx-white: #ffffff;
+      $rx-black: #000000;
+  
+  /* ===== INDICATOR COLORS ===== */
+  /* INDICATOR RED COLORS */
+    $rx-ind-red: #d95553; /* BASE */
+   $rx-ind-red2: #efc8c8; /* PALE */
+   $rx-ind-red3: #b72b28; /* DARK */
+
+  /* INDICATOR YELLOW COLORS */
+ $rx-ind-yellow: #efad58; /* BASE */
+$rx-ind-yellow2: #fadfbd; /* PALE */
+$rx-ind-yellow3: #e58a16; /* DARK */
+
+  /* INDICATOR GREEN COLORS */
+  $rx-ind-green: #007b34; /* BASE */
+ $rx-ind-green2: #dbfae8; /* PALE */
+ $rx-ind-green3: #006229; /* DARK */
+
+  /* INDICATOR BLUE COLORS */
+   $rx-ind-blue: #066cb6; /* BASE */
+  $rx-ind-blue2: #e2f3ff; /* PALE */
+  $rx-ind-blue3: #044f85; /* DARK */
+  
+  /* ===== SITE SPECIFIC COLORS ===== */
+  /* REXEL COLORS (DEFAULT) */
+       $rx-blue: #2a3e87;
+      $rx-blue2: #4487bd;
+     $rx-orange: #ee7803;
+  /* √ BUTTON COLORS */
+
+  /* HAGEMEYER COLORS */
+     $rx-hgBlue: #0068b4;
+   $rx-hgOrange: #f39100;
+  /* √ BUTTON COLORS */
+
+  /* ===== √ TO DO ===== */
+  /* √ PLATT COLORS */
+  /* √ GEXPRO COLORS */
+  /* √ SOREL COLORS */
+  /* √ HAGEMEYER COLORS */
+
+/* 
+  END OF SASS COLOR VARIABLES 
+  ========================================================================== */
