@@ -1,36 +1,26 @@
-/* ==========================================================================
-  BORDERS
-  ========================================================================== */
+// ==========================================================================
+// BORDERS
+// ==========================================================================
   
-  @import "rx-color-vars";
-
-  /* SASS===== BORDER SASS MIXIN */
-  @mixin rx-br-mix($width:1px, $style:solid, $color:$rx-brGrey) {
-    border: {
-      width: $width;
-      style: $style;
-      color: $color;
-    }
-  }
+@import "rx-mixins";
     
-  /* ===== BASE BORDER STYLE ===== */
+  // ===== BASE BORDER STYLE =====
   .rx-br {@include rx-br-mix();}
 
-  /* ===== BORDER OMISSION ===== */
+  // ===== BORDER OMISSION =====
   .rx-br-omit {@include rx-br-mix(0);}
 
-  /* OMIT SIDES INDIVIDUALLY*/
+  // OMIT SIDES INDIVIDUALLY
   .rx-br-top-omit    {@include rx-br-mix; border-top-width:0;    }
   .rx-br-right-omit  {@include rx-br-mix; border-right-width:0;  }
   .rx-br-bottom-omit {@include rx-br-mix; border-bottom-width:0; }
   .rx-br-left-omit   {@include rx-br-mix; border-left-width:0;   }
     
-  /* OMIT ALL BUT ONE SIDE */
+  // OMIT ALL BUT ONE SIDE 
   .rx-br-top    {@include rx-br-mix(0); border-top-width:1px;    }
   .rx-br-right  {@include rx-br-mix(0); border-right-width:1px;  }
   .rx-br-bottom {@include rx-br-mix(0); border-bottom-width:1px; }
   .rx-br-left   {@include rx-br-mix(0); border-left-width:1px;   }
 
-/* 
-  END OF BORDERS SECTION
-  ========================================================================== */
+// END OF BORDERS SECTION
+// ==========================================================================

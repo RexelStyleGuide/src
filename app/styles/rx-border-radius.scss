@@ -1,0 +1,32 @@
+// ==========================================================================
+// BORDER RADIUS
+// ==========================================================================
+@import "rx-mixins";
+
+// ===== BASE BORDER RADIUS STYLE =====
+.rx-br-rad                   {@include rx-br-rad-mix(true, true, true, true);}
+
+// ===== BORDER RADIUS OMISSION RULES =====
+// OMIT ALL CORNERS
+.rx-br-rad-omit          {@include rx-br-rad-mix(false, false, false, false);}
+
+// OMIT CORNERS INDIVIDUALLY 
+.rx-br-rad-topLeft-omit     {@include rx-br-rad-mix(false, true, true, true);}
+.rx-br-rad-topRight-omit    {@include rx-br-rad-mix(true, false, true, true);}
+.rx-br-rad-bottomRight-omit {@include rx-br-rad-mix(true, true, false, true);}
+.rx-br-rad-bottomLeft-omit  {@include rx-br-rad-mix(true, true, true, false);}  
+
+// ===== BORDER RADIUS SPECIFICITY ===== 
+// SELECTIVELY ADD BORDER RADIUS TO A SIDE (TOP,RIGHT,BOTTOM,LEFT) 
+.rx-br-rad-top            {@include rx-br-rad-mix(true, true, false, false);}
+.rx-br-rad-right          {@include rx-br-rad-mix(false, true, true, false);}
+.rx-br-rad-bottom         {@include rx-br-rad-mix(false, false, true, true);}
+.rx-br-rad-left           {@include rx-br-rad-mix(true, false, false, true);}     
+// SELECTIVELY ADD BORDER RADIUS TO A SPECIFIC CORNER 
+.rx-br-rad-topLeft        {@include rx-br-rad-mix(rue, false, false, false);}
+.rx-br-rad-topRight      {@include rx-br-rad-mix(false, true, false, false);}
+.rx-br-rad-bottomRight   {@include rx-br-rad-mix(false, false, true, false);}
+.rx-br-rad-bottomLeft    {@include rx-br-rad-mix(false, false, false, true);}
+
+// END BORDER RADIUS     
+// ==========================================================================

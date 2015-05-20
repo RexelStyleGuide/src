@@ -1,59 +1,94 @@
-/* ==========================================================================
-  SASS COLOR VARIABLES
+// ==========================================================================
+// SASS COLOR VARIABLES
+//
+// TO DO:
+// ==> DEFINE SITE SPECIFIC BUTTON COLORS
+// ==> DEFINE DISABLED BUTTON COLORS
+// ==> GET LIST OF SITES
+// ==> DEFINE SITE COLORS
+// ==========================================================================
 
-  TO DO:
-  ==> DEFINE SITE SPECIFIC BUTTON COLORS
-  ==> DEFINE DISABLED BUTTON COLORS
-  ==> GET LIST OF SITES
-  ==> DEFINE SITE COLORS
-  ========================================================================== */
+// ===== GLOBAL COLORS =====
+       $rx-grey: #f5f5f5 !default;
+     $rx-brGrey: #dadada !default;
+   $rx-textGrey: #58585a !default;
+      $rx-white: #ffffff !default;
+      $rx-black: #000000 !default;
+        $rx-ccc: #cccccc !default;
+          
+// ===== INDICATOR COLORS =====
+// INDICATOR RED COLORS
+    $rx-ind-red: #d95553 !default;
+   $rx-ind-red2: #efc8c8 !default;
+   $rx-ind-red3: #b72b28 !default;
 
-  /* ===== GLOBAL COLORS ===== */
-       $rx-grey: #f5f5f5;
-     $rx-brGrey: #dadada;
-   $rx-textGrey: #58585a;
-      $rx-white: #ffffff;
-      $rx-black: #000000;
+// INDICATOR YELLOW COLORS 
+ $rx-ind-yellow: #efad58 !default;
+$rx-ind-yellow2: #fadfbd !default;
+$rx-ind-yellow3: #e58a16 !default;
+
+// INDICATOR GREEN COLORS 
+  $rx-ind-green: #007b34 !default;
+ $rx-ind-green2: #dbfae8 !default;
+ $rx-ind-green3: #006229 !default;
+
+// INDICATOR BLUE COLORS 
+   $rx-ind-blue: #066cb6 !default;
+  $rx-ind-blue2: #e2f3ff !default;
+  $rx-ind-blue3: #044f85 !default;
   
-  /* ===== INDICATOR COLORS ===== */
-  /* INDICATOR RED COLORS */
-    $rx-ind-red: #d95553; /* BASE */
-   $rx-ind-red2: #efc8c8; /* PALE */
-   $rx-ind-red3: #b72b28; /* DARK */
+// ===== SITE SPECIFIC COLORS ===== 
+// REXEL COLORS (DEFAULT) 
+       $rx-blue: #2a3e87 !default;
+      $rx-blue2: #4487bd !default;
+     $rx-orange: #ee7803 !default;
+   $rx-blue-hvr: #3149A3 !default;
+//    
 
-  /* INDICATOR YELLOW COLORS */
- $rx-ind-yellow: #efad58; /* BASE */
-$rx-ind-yellow2: #fadfbd; /* PALE */
-$rx-ind-yellow3: #e58a16; /* DARK */
+// HAGEMEYER COLORS 
+     $rx-hgBlue: #0068b4 !default;
+ $rx-hgBlue-hvr: #065d9c !default;
+   $rx-hgOrange: #f39100 !default;
 
-  /* INDICATOR GREEN COLORS */
-  $rx-ind-green: #007b34; /* BASE */
- $rx-ind-green2: #dbfae8; /* PALE */
- $rx-ind-green3: #006229; /* DARK */
+// ===== √ TO DO ===== 
+// √ PLATT COLORS 
+// √ GEXPRO COLORS 
+// √ SOREL COLORS 
+// √ HAGEMEYER COLORS 
 
-  /* INDICATOR BLUE COLORS */
-   $rx-ind-blue: #066cb6; /* BASE */
-  $rx-ind-blue2: #e2f3ff; /* PALE */
-  $rx-ind-blue3: #044f85; /* DARK */
+// END OF SASS COLOR VARIABLES 
+// ========================================================================== 
+
+
+
   
-  /* ===== SITE SPECIFIC COLORS ===== */
-  /* REXEL COLORS (DEFAULT) */
-       $rx-blue: #2a3e87;
-      $rx-blue2: #4487bd;
-     $rx-orange: #ee7803;
-  /* √ BUTTON COLORS */
 
-  /* HAGEMEYER COLORS */
-     $rx-hgBlue: #0068b4;
-   $rx-hgOrange: #f39100;
-  /* √ BUTTON COLORS */
+// ========================================================================== 
+// ===== DEFAULT FOUNDATION COLORS ===== 
+$white         : $rx-white !default;
+$ghost         : #FAFAFA !default;
+$snow          : #F9F9F9 !default;
+$vapor         : #F6F6F6 !default;
+$white-smoke   : #F5F5F5 !default;
+$silver        : #EFEFEF !default;
+$smoke         : #EEEEEE !default;
+$gainsboro     : #DDDDDD !default;
+$iron          : #CCCCCC !default;
+$base          : #AAAAAA !default;
+$aluminum      : #999999 !default;
+$jumbo         : #888888 !default;
+$monsoon       : #777777 !default;
+$steel         : #666666 !default;
+$charcoal      : #555555 !default;
+$tuatara       : #444444 !default;
+$oil           : #333333 !default;
+$jet           : #222222 !default;
+$black         : $rx-black !default;
 
-  /* ===== √ TO DO ===== */
-  /* √ PLATT COLORS */
-  /* √ GEXPRO COLORS */
-  /* √ SOREL COLORS */
-  /* √ HAGEMEYER COLORS */
-
-/* 
-  END OF SASS COLOR VARIABLES 
-  ========================================================================== */
+// FOUNDATION DEFAULT COLORS THROUGHOUT 
+$primary-color: $rx-blue !default;  
+$secondary-color: #e7e7e7 !default; // WHITE LILAC, THIS NEEDS TO CHANGE 
+$alert-color: $rx-ind-red !default;    
+$success-color: $rx-ind-green !default;  
+$warning-color: $rx-ind-yellow !default;  
+$info-color: $rx-ind-blue !default;      

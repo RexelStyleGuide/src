@@ -1,0 +1,132 @@
+// ==========================================================================
+// COLORS (CSS) 
+//
+// ALL COLORS DEFINED AS TEXT, BACKGROUND, THEN BORDER RESPECTIVELY 
+// ==========================================================================
+
+  @import "rx-global";
+
+
+  // ===== GREYSCALE COLORS ===== 
+  .rx-white    {color:$rx-white;}
+  .rx-white-bg {background:$rx-white;}
+  .rx-white-br {@include rx-br-mix($color:$rx-white);}
+
+  .rx-grey    {color:$rx-grey;}
+  .rx-grey-bg {background:$rx-grey;}
+  .rx-grey-br {@include rx-br-mix($color:$rx-grey);}
+
+  .rx-brGrey    {color:$rx-brGrey;}
+  .rx-brGrey-bg {background:$rx-brGrey;}
+  .rx-brGrey-br {@include rx-br-mix($color:$rx-brGrey);}
+
+  .rx-textGrey    {color:$rx-textGrey;}
+  .rx-textGrey-bg {background:$rx-textGrey;}
+  .rx-textGrey-br {@include rx-br-mix($color:$rx-textGrey);}
+      
+  // ===== INDICATOR COLORS ===== 
+  // INDICATOR RED 
+  .rx-ind-red,.rx-err-text,i.fa-times {color:$rx-ind-red;}
+  .rx-ind-red-bg {background:$rx-ind-red;}
+  .rx-ind-red-br {@include rx-br-mix($color:$rx-ind-red);}
+
+  // PALE 
+    .rx-ind-red2 {color:$rx-ind-red2;}
+    .rx-ind-red2-bg {background:$rx-ind-red2;}
+    .rx-ind-red2-br {@include rx-br-mix($color:$rx-ind-red2);}
+  // DARK 
+    .rx-ind-red3 {color:$rx-ind-red3;}
+    .rx-ind-red3-bg {background:$rx-ind-red3;}
+    .rx-ind-red3-br {@include rx-br-mix($color:$rx-ind-red3);}
+      
+  // INDICATOR YELLOW 
+  .rx-ind-yellow,i.fa-exclamation {color:$rx-ind-yellow;}
+  .rx-ind-yellow-bg {background:$rx-ind-yellow;}
+  .rx-ind-yellow-br {@include rx-br-mix($color:$rx-ind-yellow);}
+
+  // PALE 
+    .rx-ind-yellow2 {color:$rx-ind-yellow2;}
+    .rx-ind-yellow2-bg {background:$rx-ind-yellow2;}
+    .rx-ind-yellow2-br {@include rx-br-mix($color:$rx-ind-yellow2);}
+  // DARK 
+    .rx-ind-yellow3 {color:$rx-ind-yellow3;}
+    .rx-ind-yellow3-bg {background:$rx-ind-yellow3;}
+    .rx-ind-yellow3-br {@include rx-br-mix($color:$rx-ind-yellow3);}
+      
+  // INDICATOR GREEN 
+  .rx-ind-green,i.fa-check {color:$rx-ind-green;}
+  .rx-ind-green-bg {background:$rx-ind-green;}
+  .rx-ind-green-br {@include rx-br-mix($color:$rx-ind-green);}
+
+  // PALE 
+    .rx-ind-green2 {color:$rx-ind-green2;}
+    .rx-ind-green2-bg {background:$rx-ind-green2;}
+    .rx-ind-green2-br {@include rx-br-mix($color:$rx-ind-green2);}
+  // DARK 
+    .rx-ind-green3 {color:$rx-ind-green3;}
+    .rx-ind-green3-bg {background:$rx-ind-green3;}
+    .rx-ind-green3-br {@include rx-br-mix($color:$rx-ind-green3);}
+      
+  // INDICATOR BLUE 
+  .rx-ind-blue,i.fa-question-circle {color:$rx-ind-blue;}
+  .rx-ind-blue-bg {background:$rx-ind-blue;}
+  .rx-ind-blue-br {@include rx-br-mix($color:$rx-ind-blue);}
+
+  // PALE 
+    .rx-ind-blue2 {color:$rx-ind-blue2;}
+    .rx-ind-blue2-bg {background:$rx-ind-blue2;}
+    .rx-ind-blue2-br {@include rx-br-mix($color:$rx-ind-blue2);}
+  // DARK 
+    .rx-ind-blue3 {color:$rx-ind-blue3;}
+    .rx-ind-blue3-bg {background:$rx-ind-blue3;}
+    .rx-ind-blue3-br {@include rx-br-mix($color:$rx-ind-blue3);}
+      
+  // ===== REXEL COLOR PALETTE ===== 
+  .rx-blue {color:$rx-blue;}
+  .rx-blue-bg {background:$rx-blue;}
+  .rx-blue-br {@include rx-br-mix($color:$rx-blue);}
+
+  .rx-blue2 {color:$rx-blue2;}
+  .rx-blue2-bg {background:$rx-blue2;}
+  .rx-blue2-br {@include rx-br-mix($color:$rx-blue2);}
+
+  .rx-orange {color:$rx-orange;}
+  .rx-orange-bg {background:$rx-orange;}
+  .rx-orange-br {@include rx-br-mix($color:$rx-orange);}
+
+  // ===== HAGEMEYER COLOR PALETTE ===== 
+  .rx-hgBlue {color:$rx-hgBlue;}
+  .rx-hgBlue-bg {background:$rx-hgBlue;}
+  .rx-hgBlue-br {@include rx-br-mix($color:$rx-hgBlue);}
+
+  .rx-hgOrange {color:$rx-hgOrange;}
+  .rx-hgOrange-bg {background:$rx-hgOrange;}
+  .rx-hgOrange-br {@include rx-br-mix($color:$rx-hgOrange);}
+  
+  // ===== OTHER COLOR PALETTES GO HERE ===== 
+
+  // ===== SEMI OPAQUE TEXT COLORS ===== 
+  
+  // SEMI OPAQUE TEXT COLORS 
+  .rx-disabled-text    {@include rx-alpha-attribute-mix('color', rgba($rx-textGrey, 0.50), white);}
+  .rx-placeholder-text {@include rx-alpha-attribute-mix('color', rgba($rx-textGrey, 0.75), white);}
+
+  // ===== OVERLAY COLORS ===== 
+  
+
+  .rx-overlay-black {
+    background:$rx-black;
+    @include rx-opacity(0.7);
+  }
+
+  .rx-overlay-white {
+    background:$rx-white;
+    @include rx-opacity(0.7);
+  }      
+  
+  // WHITE GRADIENT 
+  .rx-white-gradient {@include rx-linear-gradient-mix($rx-white, $rx-grey);}
+
+// 
+// END COLORS (CSS)
+// ==========================================================================

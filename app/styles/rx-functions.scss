@@ -1,4 +1,4 @@
-// This is the default html and body font-size for the base rem value.
+// SETS DEFAULT TEXT SIZE
 $rem-base: 16px !default;
 
 // IMPORT ONCE
@@ -135,8 +135,3 @@ $modules: () !default;
   @return rem-calc($values);
 }
 
-// OLD EM CALC
-// Deprecated: We'll drop support for this in 5.1.0, use rem-calc()
-@function em-calc($values){
-  @return rem-calc($values);
-}

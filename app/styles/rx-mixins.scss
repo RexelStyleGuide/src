@@ -1,0 +1,147 @@
+@import "rx-color-vars";
+
+// ========================================================================== BORDERS
+@mixin rx-br-mix($width:1px, $style:solid, $color:$rx-brGrey) {
+  border: {
+    width: $width;
+    style: $style;
+    color: $color;
+  }
+}
+// ==========================================================================
+
+
+
+
+// ========================================================================== COLORS
+
+// OPACITY MIXIN 
+  @mixin rx-opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+  }
+
+// SEMI OPAQUE TEXT MIXIN 
+  @mixin rx-alpha-attribute-mix($attribute, $color, $background) {
+    $percent: alpha($color) * 100%;
+    $opaque: opacify($color, 1);
+    $solid-color: mix($opaque, $background, $percent);
+    #{$attribute}: $solid-color;
+    #{$attribute}: $color;
+  }
+
+   // BACKGROUND GRADIENT MIXIN FROM COMPASS, 
+  // SEE http://sassmeister.com/gist/b58f6e2cc3160007c880 
+  @function convert-angle($value, $unit) {
+    $convertable-units: deg grad turn rad;
+    $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
+    @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+      @return $value
+      / nth($conversion-factors, index($convertable-units, unit($value)))
+      * nth($conversion-factors, index($convertable-units, $unit));
+    }
+    @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
+  }
+
+  @function is-direction($value) {
+    $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+    $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+    @return $is-direction or $is-angle;
+  }
+
+  @function legacy-direction($value) {
+    @if is-direction($value) == false {
+      @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
+    }
+  
+    $conversion-map: ( 
+      to top          : bottom,
+      to top right    : bottom left,
+      to right top    : left bottom,
+      to right        : left,
+      to bottom right : top left,
+      to right bottom : left top,
+      to bottom       : top,
+      to bottom left  : top right,
+      to left bottom  : right top,
+      to left         : right,
+      to left top     : right bottom,
+      to top left     : bottom right
+    );
+    
+    @if map-has-key($conversion-map, $value) {@return map-get($conversion-map, $value);}
+    @return 90deg - convert-angle($value, 'deg');
+  }
+
+  @mixin rx-linear-gradient-mix($direction, $color-stops...) {
+    @if is-direction($direction) == false {
+      $color-stops: ($direction, $color-stops);
+      $direction: 180deg;
+    } 
+
+    background: nth(nth($color-stops, 1), 1);
+    background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+    background: linear-gradient($direction, $color-stops);
+
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/rx-btn-white-bg.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/rx-btn-white-bg.png', sizingMethod='scale')";
+  }
+// ==========================================================================
+
+
+
+// ========================================================================== BORDER RADIUS
+// FOUNDATION
+@mixin radius($radius:$global-radius) {
+  @if $radius {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+  }
+}
+
+// EQUAL SIDES MIXIN
+@mixin side-radius($side, $radius:$global-radius) {
+  @if ($side == left or $side == right) {
+    -webkit-border-bottom-#{$side}-radius: $radius;
+    -webkit-border-top-#{$side}-radius: $radius;
+    border-bottom-#{$side}-radius: $radius;
+    border-top-#{$side}-radius: $radius;
+  } @else {
+    -webkit-#{$side}-left-radius: $radius;
+    -webkit-#{$side}-right-radius: $radius;
+    border-#{$side}-left-radius: $radius;
+    border-#{$side}-right-radius: $radius;
+  }
+}
+
+// SETS DEFAULT BORDER RADIUS 
+$global-radius: 3px !default;
+$global-rounded: 1000px !default;
+  
+// RX 
+@mixin rx-br-rad-mix($topLeft:true, $topRight:true, $bottomRight:true, $bottomLeft:true) {
+  @if $topLeft {
+        -webkit-border-radius-topleft: $global-radius; 
+          -moz-border-top-left-radius: $global-radius;
+               border-top-left-radius: $global-radius;
+  } 
+  @if $topRight {
+       -webkit-border-radius-topright: $global-radius; 
+         -moz-border-top-right-radius: $global-radius;
+              border-top-right-radius: $global-radius;
+  }
+  @if $bottomRight {
+    -webkit-border-radius-bottomright: $global-radius; 
+      -moz-border-bottom-right-radius: $global-radius;
+           border-bottom-right-radius: $global-radius;
+  }
+  @if $bottomLeft {
+     -webkit-border-radius-bottomleft: $global-radius; 
+       -moz-border-bottom-left-radius: $global-radius;
+            border-bottom-left-radius: $global-radius;
+  }
+    background-clip: padding-box;
+}
+// ==========================================================================
