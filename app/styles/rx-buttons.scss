@@ -213,7 +213,6 @@ $button-disabled-cursor: $cursor-default-value !default;
     // Default styles applied outside of media query
     .rx-btn,
     a.rx-btn,
-    button, 
     button.rx-btn {
       @include button-base;
       @include button-size;
@@ -236,8 +235,8 @@ $button-disabled-cursor: $cursor-default-value !default;
       &.info      { @include button-style($bg:$info-color, $bg-hover:$info-button-bg-hover, $border-color:$info-button-border-color); }
 
       &.large  { @include button-size($padding:$button-lrg); text-transform:uppercase;}
-      &.small  { @include button-size($padding:$button-sml); }
-      &.tiny   { @include button-size($padding:$button-tny); }
+      &.small  { @include button-size($padding:$button-sml); min-width:0;}
+      &.tiny   { @include button-size($padding:$button-tny); min-width:0;}
       &.expand, &.rx-btn-block { @include button-size($padding:null,$full-width:true); }
 
       &.left-align  { text-align: left; padding-left: rem-calc(12); }
