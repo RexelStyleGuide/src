@@ -215,7 +215,7 @@ module.exports = function (grunt) {
         importPath: './bower_components',
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/styles/fonts',
+        httpFontsPath: '/font',
         relativeAssets: true,
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
