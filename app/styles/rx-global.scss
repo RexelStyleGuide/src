@@ -155,7 +155,8 @@ $base-line-height: 1.5 !default;
 }
 
 // FONTS 
-$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+$font-family-sans-serif: open_sansregular, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif !default;
+$font-family-sans-serif-headings: latoregular, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif !default;
 $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif !default;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace !default;
 
@@ -167,6 +168,7 @@ $font-weight-bold: bold !default;
 $body-bg: #fff !default;
 $body-font-color: #58585A !default;
 $body-font-family: $font-family-sans-serif !default;
+$body-font-family-headings: $font-family-sans-serif-headings !default;
 $body-font-weight: $font-weight-normal !default;
 $body-font-style: normal !default;
 
