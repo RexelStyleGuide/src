@@ -271,7 +271,8 @@ module.exports = function (grunt) {
         assetsDirs: [
           '<%= yeoman.dist %>',
           '<%= yeoman.dist %>/images',
-          '<%= yeoman.dist %>/styles'
+          '<%= yeoman.dist %>/styles',
+          '<%= yeoman.dist %>/font'
         ]
       }
     },
@@ -481,7 +482,6 @@ module.exports = function (grunt) {
     'copy:dist',
     'cdnify',
     'uglify',
-    'filerev',
     'usemin',
     'cssmin',
     'htmlmin'
