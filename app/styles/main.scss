@@ -442,7 +442,6 @@ section.panel {
     } 
     
     .buttons-row {
-
       .large-3, .large-4 {
         text-align: center;
 
@@ -451,6 +450,22 @@ section.panel {
           margin-bottom:21px;
         }
       }
+    }
+    .fonts-row {
+        .large-3 {
+            text-align:center;
+
+            code {
+                text-align:left;
+                margin-bottom:21px;
+            }
+
+            .mb5 {
+                code {
+                    margin-bottom:5px;
+                }
+            }
+        }
     }
 
     .snippet p {
